@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{3f530efe-615a-4c3e-b1c0-d2b8bd57bd12}" Title="UiConstruction" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="UiConstruction author" Description="Sample description" Publisher="UiConstruction">
+  <App xmlns="" ProductID="{9ccde7a5-08f1-4b92-93c4-d27ac3fe3f7c}" Title="UiConstruction" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="UiConstruction author" Description="Sample description" Publisher="UiConstruction">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>
