@@ -23,27 +23,37 @@
 
             <!--TitlePanel contains the name of the application and page title-->
             <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,7">
-                <TextBlock x:Name="ApplicationTitle" Text="UiConstuction" Style="{StaticResource PhoneTextNormalStyle}"/>
-                <TextBlock x:Name="PageTitle" Text="Sign in" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <TextBlock x:Name="ApplicationTitle" Text="UiConstruction" Style="{StaticResource PhoneTextNormalStyle}"/>
+
+<!--
+                <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" 
+    Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+-->
+                <TextBlock x:Name="PageTitle" Text="{Binding Path=L10N.login, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             </StackPanel>
 
             <!--ContentPanel - place additional content here-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                 <StackPanel x:Name="TitlePanel2" Grid.Row="0" Margin="12,0,0,28">
+                    <Button Content="Show explanations" Height="73" Name="explanationToggle" Width="Auto" Click="explanationToggle_Click" FontSize="18" BorderThickness="2" AllowDrop="False" />
                     <TextBlock x:Name="SecuritySelectorText" Text="Security" Style="{StaticResource PhoneTextNormalStyle}"/>
-                    <Button Content="Show explanation" Height="73" Name="explanationToggle" Width="297" Click="explanationToggle_Click" />
                     <RadioButton Content="This is a public or shared computer" Height="71" Name="publicRadio" Checked="radioButton1_Checked" IsChecked="True" FontSize="20" />
                     <TextBlock Height="109" Name="publicExplanation" Text="Select this option if you use Outlook Web App on a public computer. Be sure to sign out when you've finished and close all windows to end your session." Width="433" TextWrapping="Wrap" Margin="0" Padding="51,0,0,0" Visibility="Collapsed" />
                     <RadioButton Content="This is a private computer" Height="71" Name="privateRadio" FontSize="20" Checked="privateRadio_Checked" Unchecked="privateRadio_Unchecked" />
                     <TextBlock Height="109" Name="privateExplanation" Text="Select this option if you're the only person who uses this computer. Your server will allow a longer period of inactivity before signing you out." TextWrapping="Wrap" Width="427" Padding="51,0,0,0" Visibility="Collapsed" />
                     <TextBlock Height="86" Name="privateWarningBlock" Text="Warning: By selecting this option, you confirm that this computer complies with your organization's security policy." TextWrapping="Wrap" Width="426" Padding="51,0,0,0" Foreground="Red" Visibility="Collapsed" />
                     <CheckBox Content="Use the light version of Outlook Web App" Height="71" Name="lightCheck" FontSize="20" Checked="lightCheck_Checked" Unchecked="lightCheck_Unchecked" />
-                    <TextBlock Height="266" Name="lightNoteBlock" Text="The light version of Outlook Web App includes fewer features. Use it if you're on a slow connection or using a computer with unusually strict browser security settings. We also support the full Outlook Web App experience on some browsers on Windows, Mac, and Linux computers. To check out all the supported browsers and operating systems, click here." Padding="51,0,0,0" Width="430" TextWrapping="Wrap" Visibility="Collapsed" />
+                    <RichTextBox Height="266" Name="lightNoteBlock" Padding="51,0,0,0" Width="430" TextWrapping="Wrap" Visibility="Collapsed" IsReadOnly="True" Margin="0,0,0,10">
+                        <Paragraph>
+                            <Run Text="The light version of Outlook Web App includes fewer features. Use it if you're on a slow connection or using a computer with unusually strict browser security settings. We also support the full Outlook Web App experience on some browsers on Windows, Mac, and Linux computers. To check out all the supported browsers and operating systems, " />
+                            <Hyperlink NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank">click here.</Hyperlink>
+                        </Paragraph>
+                    </RichTextBox>
                     <TextBlock Height="30" Name="textBlock4" Text="User name" Width="417" />
-                    <TextBox Height="71" Name="textBox1" Text="" Width="371" Padding="2" Margin="19,0,0,0" />
+                    <TextBox Height="71" Name="textBox1" Text="" Width="Auto" Padding="2" Margin="0" />
                     <TextBlock Height="30" Name="textBlock5" Text="Password" Width="419" />
-                    <PasswordBox Height="71" Name="passwordBox1" Width="371" Padding="2" Margin="19,0,0,0" />
-                    <Button Content="Sign in" Height="71" Name="button1" Width="146" AllowDrop="False" HorizontalAlignment="Right" />
+                    <PasswordBox Height="71" Name="passwordBox1" Width="Auto" Padding="2" Margin="0" />
+                    <Button Content="Sign in" Height="71" Name="button1" Width="Auto" AllowDrop="False" HorizontalAlignment="Stretch" UseLayoutRounding="True" />
                 </StackPanel>
             </Grid>
         </Grid>
