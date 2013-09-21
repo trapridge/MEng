@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="login" xml:space="preserve">
+  <data name="ExplanationToggleHide" xml:space="preserve">
+    <value>Hide explanations</value>
+  </data>
+  <data name="ExplanationToggleShow" xml:space="preserve">
+    <value>Show explanations</value>
+  </data>
+  <data name="LightCheck" xml:space="preserve">
+    <value>Use the light version of Outlook Web App</value>
+  </data>
+  <data name="LightNoteLink" xml:space="preserve">
+    <value>tap here.</value>
+  </data>
+  <data name="LightNoteRun" xml:space="preserve">
+    <value>The light version of Outlook Web App includes fewer features. Use it if you're on a slow connection or using a computer with unusually strict browser security settings. We also support the full Outlook Web App experience on some browsers on Windows, Mac, and Linux computers. To check out all the supported browsers and operating systems,</value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Invalid username and/or password</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Login done</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="PasswordBlock" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PrivateExplanationBlock" xml:space="preserve">
+    <value>Select this option if you're the only person who uses this computer. Your server will allow a longer period of inactivity before signing you out.</value>
+  </data>
+  <data name="PrivateRadio" xml:space="preserve">
+    <value>This is a private computer</value>
+  </data>
+  <data name="PrivateWarningBlock" xml:space="preserve">
+    <value>Warning: By selecting this option, you confirm that this computer complies with your organization's security policy.</value>
+  </data>
+  <data name="PublicExplanationBlock" xml:space="preserve">
+    <value>Select this option if you use Outlook Web App on a public computer. Be sure to sign out when you've finished and close all windows to end your session.</value>
+  </data>
+  <data name="PublicRadio" xml:space="preserve">
+    <value>This is a public or shared computer</value>
+  </data>
+  <data name="SecurityBlock" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SignInButton" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="UserNameBlock" xml:space="preserve">
+    <value>User name</value>
   </data>
 </root>

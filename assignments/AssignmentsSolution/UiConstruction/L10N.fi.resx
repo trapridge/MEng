@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="login" xml:space="preserve">
+  <data name="ExplanationToggleHide" xml:space="preserve">
+    <value>Piilota selitykset</value>
+  </data>
+  <data name="ExplanationToggleShow" xml:space="preserve">
+    <value>Näytä selitykset</value>
+  </data>
+  <data name="LightCheck" xml:space="preserve">
+    <value>Käytä Outlook Web App Lightia</value>
+  </data>
+  <data name="LightNoteLink" xml:space="preserve">
+    <value>täppää tätä.</value>
+  </data>
+  <data name="LightNoteRun" xml:space="preserve">
+    <value>Outlook Web Appin kevytversio sisältää vähemmän toimintoja. Käytä sitä, jos yhteytesi on hidas tai jos käytät tietokonetta, jonka selaimen suojausasetukset ovat tavallista rajoittavammat. Outlook-verkkosovelluksen täyttä versiota tuetaan myös joissakin Windows- ja Mac-tietokoneiden selaimissa. Jos haluat tarkistaa kaikki tuetut selaimet ja käyttöjärjestelmät, </value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Väärä käyttäjänimi ja/tai salasana</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Kirjauduttu</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
     <value>Kirjaudu</value>
+  </data>
+  <data name="PasswordBlock" xml:space="preserve">
+    <value>Salasana</value>
+  </data>
+  <data name="PrivateExplanationBlock" xml:space="preserve">
+    <value>Valitse tämä asetus, jos olet tämän tietokoneen ainoa käyttäjä. Palvelimesi sallii tavallista pidemmän käyttämättömyysajan, ennen kuin sinut kirjataan ulos.</value>
+  </data>
+  <data name="PrivateRadio" xml:space="preserve">
+    <value>Tämä on yksityinen tietokone</value>
+  </data>
+  <data name="PrivateWarningBlock" xml:space="preserve">
+    <value>Varoitus: Valitsemalla tämän asetuksen vahvistat, että tämä tietokone on organisaatiosi tietoturvakäytännön mukainen.</value>
+  </data>
+  <data name="PublicExplanationBlock" xml:space="preserve">
+    <value>Valitse tämä vaihtoehto, jos käytät Outlook Web Appiä julkisessa tietokoneessa. Kun olet lopettanut, muista kirjautua ulos ja sulkea kaikki ikkunat istuntosi päätteeksi.</value>
+  </data>
+  <data name="PublicRadio" xml:space="preserve">
+    <value>Tämä on julkinen tai jaettu tietokone</value>
+  </data>
+  <data name="SecurityBlock" xml:space="preserve">
+    <value>Suojaus</value>
+  </data>
+  <data name="SignInButton" xml:space="preserve">
+    <value>Kirjaudu sisään</value>
+  </data>
+  <data name="UserNameBlock" xml:space="preserve">
+    <value>Käyttäjänimi</value>
   </data>
 </root>

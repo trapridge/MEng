@@ -61,11 +61,155 @@ namespace UiConstruction {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide explanations.
+        /// </summary>
+        public static string ExplanationToggleHide {
+            get {
+                return ResourceManager.GetString("ExplanationToggleHide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show explanations.
+        /// </summary>
+        public static string ExplanationToggleShow {
+            get {
+                return ResourceManager.GetString("ExplanationToggleShow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the light version of Outlook Web App.
+        /// </summary>
+        public static string LightCheck {
+            get {
+                return ResourceManager.GetString("LightCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tap here..
+        /// </summary>
+        public static string LightNoteLink {
+            get {
+                return ResourceManager.GetString("LightNoteLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The light version of Outlook Web App includes fewer features. Use it if you&apos;re on a slow connection or using a computer with unusually strict browser security settings. We also support the full Outlook Web App experience on some browsers on Windows, Mac, and Linux computers. To check out all the supported browsers and operating systems,.
+        /// </summary>
+        public static string LightNoteRun {
+            get {
+                return ResourceManager.GetString("LightNoteRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username and/or password.
+        /// </summary>
+        public static string LoginFailure {
+            get {
+                return ResourceManager.GetString("LoginFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login done.
+        /// </summary>
+        public static string LoginSuccess {
+            get {
+                return ResourceManager.GetString("LoginSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
-        public static string login {
+        public static string PageTitle {
             get {
-                return ResourceManager.GetString("login", resourceCulture);
+                return ResourceManager.GetString("PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string PasswordBlock {
+            get {
+                return ResourceManager.GetString("PasswordBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select this option if you&apos;re the only person who uses this computer. Your server will allow a longer period of inactivity before signing you out..
+        /// </summary>
+        public static string PrivateExplanationBlock {
+            get {
+                return ResourceManager.GetString("PrivateExplanationBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a private computer.
+        /// </summary>
+        public static string PrivateRadio {
+            get {
+                return ResourceManager.GetString("PrivateRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: By selecting this option, you confirm that this computer complies with your organization&apos;s security policy..
+        /// </summary>
+        public static string PrivateWarningBlock {
+            get {
+                return ResourceManager.GetString("PrivateWarningBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select this option if you use Outlook Web App on a public computer. Be sure to sign out when you&apos;ve finished and close all windows to end your session..
+        /// </summary>
+        public static string PublicExplanationBlock {
+            get {
+                return ResourceManager.GetString("PublicExplanationBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a public or shared computer.
+        /// </summary>
+        public static string PublicRadio {
+            get {
+                return ResourceManager.GetString("PublicRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security.
+        /// </summary>
+        public static string SecurityBlock {
+            get {
+                return ResourceManager.GetString("SecurityBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in.
+        /// </summary>
+        public static string SignInButton {
+            get {
+                return ResourceManager.GetString("SignInButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name.
+        /// </summary>
+        public static string UserNameBlock {
+            get {
+                return ResourceManager.GetString("UserNameBlock", resourceCulture);
             }
         }
     }

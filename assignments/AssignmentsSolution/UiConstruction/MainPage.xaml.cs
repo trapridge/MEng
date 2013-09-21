@@ -21,46 +21,56 @@ namespace UiConstruction
             InitializeComponent();
         }
 
-        private void radioButton1_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void explanationToggle_Click(object sender, RoutedEventArgs e)
+        private void ExplanationToggle_Click(object sender, RoutedEventArgs e)
         {
             // Toggle explanations
-            if (publicExplanation.Visibility == Visibility.Collapsed && privateExplanation.Visibility == Visibility.Collapsed)
+            if (PublicExplanationBlock.Visibility == Visibility.Collapsed && PrivateExplanationBlock.Visibility == Visibility.Collapsed)
             {
-                publicExplanation.Visibility = Visibility.Visible;
-                privateExplanation.Visibility = Visibility.Visible;
-                explanationToggle.Content = "Hide explanation";
+                PublicExplanationBlock.Visibility = Visibility.Visible;
+                PrivateExplanationBlock.Visibility = Visibility.Visible;
+                ExplanationToggle.Content = L10N.ExplanationToggleHide;
             }
             else
             {
-                publicExplanation.Visibility = Visibility.Collapsed;
-                privateExplanation.Visibility = Visibility.Collapsed;
-                explanationToggle.Content = "Show explanation";
+                PublicExplanationBlock.Visibility = Visibility.Collapsed;
+                PrivateExplanationBlock.Visibility = Visibility.Collapsed;
+                ExplanationToggle.Content = L10N.ExplanationToggleShow;
             }
         }
 
-        private void privateRadio_Checked(object sender, RoutedEventArgs e)
+        // toggle warning
+        private void PrivateRadio_Checked(object sender, RoutedEventArgs e)
         {
-            privateWarningBlock.Visibility = Visibility.Visible;
+            PrivateWarningBlock.Visibility = Visibility.Visible;
+        }
+        private void PrivateRadio_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PrivateWarningBlock.Visibility = Visibility.Collapsed;
+        }
+  
+        // toggle note
+        private void LightCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            LightNoteBlock.Visibility = Visibility.Visible;
+        }
+        private void LightCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            LightNoteBlock.Visibility = Visibility.Collapsed;
         }
 
-        private void privateRadio_Unchecked(object sender, RoutedEventArgs e)
+        // hadle 'login'
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            privateWarningBlock.Visibility = Visibility.Collapsed;
+            if (UserNameBox.Text.Length <= 0 || PasswordBox.Password.Length <= 0) 
+            { 
+                MessageBox.Show(L10N.LoginFailure);
+            }
+            else 
+            {
+                MessageBox.Show(L10N.LoginSuccess);
+            }
         }
 
-        private void lightCheck_Checked(object sender, RoutedEventArgs e)
-        {
-            lightNoteBlock.Visibility = Visibility.Visible;
-        }
 
-        private void lightCheck_Unchecked(object sender, RoutedEventArgs e)
-        {
-            lightNoteBlock.Visibility = Visibility.Collapsed;
-        }
     }
 }
