@@ -20,7 +20,7 @@ namespace NetworkingAndTombstoning
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
+        // no MVVM here, just manually store persistent data to isolated storage to allow proper resuming from tombstoned state
         IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
         // Constructor
@@ -31,7 +31,15 @@ namespace NetworkingAndTombstoning
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            GetWoeid(textBox1.Text);
+            if (textBox1.Text.Length < 1)
+            {
+                MessageBox.Show("Type in a city name!");
+            }
+            else 
+            {
+                GetWoeid(textBox1.Text);
+            }
+            
         }
 
         private void textBox1_GotFocus(object sender, RoutedEventArgs e)
@@ -40,7 +48,7 @@ namespace NetworkingAndTombstoning
             textBox1.Text = "";
         }
 
-
+        // handle resuming from tombstoned state
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             string page;
@@ -65,9 +73,9 @@ namespace NetworkingAndTombstoning
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
-
         }   
 
+        // get a woeid from yahoo to enable weather query
         private void GetWoeid(string place)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select%20woeid%20from%20geo.places(0%2C1)%20where%20text%3D'" + place + "'";
@@ -84,19 +92,25 @@ namespace NetworkingAndTombstoning
                 string resultString = streamReader1.ReadToEnd();
 
                 var stream = new MemoryStream(System.Text.Encoding.Unicode.GetBytes(resultString));
-                DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(RootObject));
-                RootObject myBook = (RootObject)jsonSerializer.ReadObject(stream);
+                DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Woeid.RootObject));
+                Woeid.RootObject woeidResponse = (Woeid.RootObject)jsonSerializer.ReadObject(stream);
 
-                // if reslts is null there are none
-
+                // if reslts is null no woeid can be found
+                if (woeidResponse.query.results != null)
+                {
+                    GetWeather(woeidResponse.query.results.place.woeid);
+                }
+                else 
+                {
+                    System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() => {
+                        MessageBox.Show("City not found!");
+                    });
+                }
                 
-
-                System.Diagnostics.Debug.WriteLine(myBook.query.results.place.woeid);
-
-                GetWeather(myBook.query.results.place.woeid);
             }
         }
 
+        // get weather forecast from yahoo
         private void GetWeather(string woeid)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select%20item.description%20from%20weather.forecast%20where%20woeid%3D" + woeid +  "%20and%20u%3D'c'";
@@ -113,15 +127,15 @@ namespace NetworkingAndTombstoning
                 string resultString = streamReader1.ReadToEnd();
 
                 var stream = new MemoryStream(System.Text.Encoding.Unicode.GetBytes(resultString));
-                DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(RootObject2));
+                DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Weather.RootObject));
 
-                RootObject2 myBook = (RootObject2)jsonSerializer.ReadObject(stream);
+                Weather.RootObject myBook = (Weather.RootObject)jsonSerializer.ReadObject(stream);
 
                 System.Diagnostics.Debug.WriteLine(myBook.query.results.channel.item.description);
 
                 string weatherInfo = myBook.query.results.channel.item.description;
 
-
+                // show weather data on a separate page
                 System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() => {
                     PhoneApplicationService.Current.State["city"] = textBox1.Text;
                     PhoneApplicationService.Current.State["weather"] = weatherInfo;
@@ -135,55 +149,4 @@ namespace NetworkingAndTombstoning
         
         
     }
-}
-
-public class Place
-{
-    public string woeid { get; set; }
-}
-
-public class Results
-{
-    public Place place { get; set; }
-}
-
-public class Query
-{
-    public int count { get; set; }
-    public string created { get; set; }
-    public string lang { get; set; }
-    public Results results { get; set; }
-}
-
-public class RootObject
-{
-    public Query query { get; set; }
-}
-
-public class Item2
-{
-    public string description { get; set; }
-}
-
-public class Channel2
-{
-    public Item2 item { get; set; }
-}
-
-public class Results2
-{
-    public Channel2 channel { get; set; }
-}
-
-public class Query2
-{
-    public int count { get; set; }
-    public string created { get; set; }
-    public string lang { get; set; }
-    public Results2 results { get; set; }
-}
-
-public class RootObject2
-{
-    public Query2 query { get; set; }
 }

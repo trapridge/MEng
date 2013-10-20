@@ -20,12 +20,14 @@ namespace NetworkingAndTombstoning
     {
         string weatherInfo;
         IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+        bool backPressed = false; 
 
         public Page1()
         {
             InitializeComponent();
         }
 
+        // resume data from isolated storage (after resuming from tombstoned state) or get it from main page
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             backPressed = false;
@@ -46,18 +48,19 @@ namespace NetworkingAndTombstoning
                 weatherInfo = (string)PhoneApplicationService.Current.State["weather"];
             }
 
+            // use browser to display inline html delivered by yahoo JSON weather api
             webBrowser1.NavigateToString("<head><style>* {  color: white; background-color: black; }</style></head><body>" + weatherInfo + "</body>");
             webBrowser1.Visibility = Visibility.Visible;
         }
 
-        bool backPressed = false; 
-
+        // safeguard against regular navigation being mixed up with tombstone handling
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             backPressed = true;
             base.OnBackKeyPress(e);
         }
 
+        // persist page and weather data 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
