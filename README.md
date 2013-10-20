@@ -4,6 +4,7 @@ meng-wp
 Assigments:
 
  * UiContstruction: `assignments/AssignmentsSolution/UiConstruction`
+ * Networking & tombstoning: `assignments/AssignmentsSolution/NetworkingAndTombstoning`
 
 
 MEng - Windows Phone Development
