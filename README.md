@@ -1,13 +1,10 @@
-meng-wp
+MEng
 =======
 
-Assigments:
+All code for assigments and project works:
 
- * UiContstruction: `assignments/AssignmentsSolution/UiConstruction`
- * Networking & tombstoning: `assignments/AssignmentsSolution/NetworkingAndTombstoning`
-
-
-MEng - Windows Phone Development
+ * Windows Phone Application Development: `wp_app_dev/`
+ * Mobile Web Technologies: `mobile_web_tech/`
 
 Juuso Ansaharju/m0000892
 
