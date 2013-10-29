@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Media Queries</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <style type="text/css">
+            /* inline styles for convenience... */
+
+            #container {
+                text-align: center;
+            }
+
+            #mq-tester {
+                display: none;
+            }
+
+            @media only screen and (min-width: 0) {
+                #mq-tester {        
+                    display: block;
+                    padding: .5em;
+                    background-color: red;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="container">
+
+            <p id="mq-tester">This is visible if media queries are supported.</p>
+
+            <h2>Team</h2>
+            <p>One-man-team: Juuso Ansaharju (m0000892)</p>
+
+            <h2>Phones</h2>
+            
+            <h3>Apple iPhone 5</h3>
+            <img src="img/iphone5.png" />
+
+            <h3>Apple iPhone 4S</h3>
+            <img src="img/iphone4s.png" />
+
+            <h2>Report</h2>
+            <p>Stock browsers on both devices support media queries. There were no problems with browsing UX.</p>
+            <p><a href="index.html.txt">Source HTML (with inline CSS)</a></p>
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
