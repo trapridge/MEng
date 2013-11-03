@@ -15,13 +15,16 @@ using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using Microsoft.Phone.Shell;
+using System.Text.RegularExpressions;
+using System.IO.IsolatedStorage;
 
 namespace ProjectWork
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
-        
+        private string access_token;
+        private string refresh_token;
+        IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
         // Constructor
         public MainPage()
@@ -38,6 +41,11 @@ namespace ProjectWork
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            if (settings.TryGetValue("access_key", out access_token))
+            {
+
+            }
+
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
@@ -50,31 +58,29 @@ namespace ProjectWork
             my_popup_xaml.IsOpen = true;
         }
 
+        
         Boolean done = false;
         private void webBrowser1_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            /*
-            if (!done) 
-            {
-                string html = webBrowser1.SaveToString();
-                string hackstring = "<meta name=\"viewport\" content=\"width=320,user-scalable=no\" />";
-                html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring);
-                //string hackstring2 = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">";
-                //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring2);
+            /*    
+                if (!done) 
+                {
+                    string html = webBrowser1.SaveToString();
+                
+                    string hackstring = "<meta name=\"viewport\" content=\"width=208,height=377, user-scalable=no\" />";
+                    html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring);
+                    //string hackstring2 = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">";
+                    //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring2);
 
-                //string hackstring3 = "<script src=\"http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js\"></script><script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>";
-                //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring3);
+                    //string hackstring3 = "<script src=\"http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js\"></script><script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>";
+                    //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring3);
 
-                webBrowser1.NavigateToString(html);
-                done = true;
-            }
-            */
-             
-             
+                    webBrowser1.NavigateToString(html);
+                    done = true;
+                }   
+             */
         }
-
-
-
+        
 
         private void btn_continue_Click(object sender, RoutedEventArgs e)
         {
@@ -83,8 +89,11 @@ namespace ProjectWork
             
             webBrowser1.Visibility = Visibility.Visible;
 
+            Debug.WriteLine("Connecting to login...");
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                Debug.WriteLine("Connecting to login2...");
                 webBrowser1.Navigate(new Uri(auth_url));
             });
 
@@ -96,31 +105,31 @@ namespace ProjectWork
         }
 
 
-        string access_token;
-        string refresh_token;
+
 
         private void webBrowser1_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            if (strCmp(e.Uri.AbsoluteUri, "https://www.google.") == true || strCmp(e.Uri.AbsoluteUri, "https://localhost") == true || strCmp(e.Uri.AbsoluteUri, "test.html") == true)
+            
+            if (strCmp(e.Uri.AbsoluteUri, "https://www.google.") == true)
             {
                 Debug.WriteLine(e.Uri.AbsoluteUri);
 
-                string[] _params = e.Uri.Query.Split('&');
-                foreach(String param in _params)
-                {
-                    if(param.Contains("access_token"))
-                    {
-                        string[] temp = param.Split('=');
-                        access_token = temp[temp.Length - 1];
+                foreach (KeyValuePair<string, string> keys in Helpers.ParseQueryString(e.Uri)) { 
+                    if(keys.Key == "access_token") {
+                        access_token = keys.Value;
+                        settings.Add("access_token", access_token);
+                        Debug.WriteLine("Found access token: " + access_token);
                     }
-
-                    if (param.Contains("refresh_token"))
+                    if (keys.Key == "refresh_token")
                     {
-                        string[] temp = param.Split('=');
-                        refresh_token = temp[temp.Length - 1];
+                        refresh_token = keys.Value;
+                        Debug.WriteLine("Found refresh token: " + refresh_token);
                     }
                 }
+
             }
+             
+                 
         }
 
         private bool strCmp(string a, string b)
@@ -153,7 +162,7 @@ namespace ProjectWork
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
-            string tasks_query = "https://www.producteev.com/api/tasks/search?access_token=FvgUUxkUwUJB9JhBMKCDxw8tUhvYzAiA6GpPccaS7Ew&alias=responsible&sort=priority&order=asc";
+            string tasks_query = "https://www.producteev.com/api/tasks/search?&alias=responsible&sort=priority&order=asc&access_token=" + access_token;
 
 
             System.Uri myUri = new System.Uri(tasks_query);
@@ -161,23 +170,7 @@ namespace ProjectWork
             myRequest.Method = "POST";
             myRequest.ContentType = "application/json";
             
-            //myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), myRequest);
-
-            //HttpWebRequest myRequest = (HttpWebRequest)callbackResult.AsyncState;
-            // End the stream request operation
-            //Stream postStream = myRequest.EndGetRequestStream(callbackResult);
-
-            // Create the post data
-            //string postData = "consumer_key=consumerkey&redirect_uri=http://www.google.com";
-            //byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-
-            // Add the post data to the web request
-            //postStream.Write(byteArray, 0, byteArray.Length);
-            //postStream.Close();
-
-            // Start the web request
             myRequest.BeginGetResponse(new AsyncCallback(TasksCallback), myRequest);
-
 
             progress.IsVisible = true;
         }
@@ -188,7 +181,22 @@ namespace ProjectWork
         private void TasksCallback(IAsyncResult asynchronousResult)
         {
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
-            HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(asynchronousResult);
+            HttpWebResponse response;
+
+            try
+            {
+                response = (HttpWebResponse)request.EndGetResponse(asynchronousResult);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Connection problem: " + e.Message);
+                System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    progress.IsVisible = false;
+                });
+                return;
+            }
+
             using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
             {
                 // read JSON from payload and map to ProducteevTasks
@@ -235,6 +243,7 @@ namespace ProjectWork
         }
 
     }
+
     
 }
 
