@@ -1,79 +1,79 @@
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+section .list li.category-Baked-goods {
+  -webkit-box-shadow: inset 4px 0 Brown;
+  -moz-box-shadow: inset 4px 0 Brown;
+  -ms-box-shadow: inset 4px 0 Brown;
+  -o-box-shadow: inset 4px 0 Brown;
+  box-shadow: inset 4px 0 Brown;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+section .list li.category-Baking-products {
+  -webkit-box-shadow: inset 4px 0 Khaki;
+  -moz-box-shadow: inset 4px 0 Khaki;
+  -ms-box-shadow: inset 4px 0 Khaki;
+  -o-box-shadow: inset 4px 0 Khaki;
+  box-shadow: inset 4px 0 Khaki;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+section .list li.category-Beverages {
+  -webkit-box-shadow: inset 4px 0 Pink;
+  -moz-box-shadow: inset 4px 0 Pink;
+  -ms-box-shadow: inset 4px 0 Pink;
+  -o-box-shadow: inset 4px 0 Pink;
+  box-shadow: inset 4px 0 Pink;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+section .list li.category-Canned-food {
+  -webkit-box-shadow: inset 4px 0 SlateGray;
+  -moz-box-shadow: inset 4px 0 SlateGray;
+  -ms-box-shadow: inset 4px 0 SlateGray;
+  -o-box-shadow: inset 4px 0 SlateGray;
+  box-shadow: inset 4px 0 SlateGray;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
+section .list li.category-Coffee-and-tea {
+  -webkit-box-shadow: inset 4px 0 Chocolate;
+  -moz-box-shadow: inset 4px 0 Chocolate;
+  -ms-box-shadow: inset 4px 0 Chocolate;
+  -o-box-shadow: inset 4px 0 Chocolate;
+  box-shadow: inset 4px 0 Chocolate;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+section .list li.category-Dairy-products {
+  -webkit-box-shadow: inset 4px 0 FloralWhite;
+  -moz-box-shadow: inset 4px 0 FloralWhite;
+  -ms-box-shadow: inset 4px 0 FloralWhite;
+  -o-box-shadow: inset 4px 0 FloralWhite;
+  box-shadow: inset 4px 0 FloralWhite;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+section .list li.category-Fresh-meat {
+  -webkit-box-shadow: inset 4px 0 Maroon;
+  -moz-box-shadow: inset 4px 0 Maroon;
+  -ms-box-shadow: inset 4px 0 Maroon;
+  -o-box-shadow: inset 4px 0 Maroon;
+  box-shadow: inset 4px 0 Maroon;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+section .list li.category-Fruits-and-vegetables {
+  -webkit-box-shadow: inset 4px 0 GreenYellow;
+  -moz-box-shadow: inset 4px 0 GreenYellow;
+  -ms-box-shadow: inset 4px 0 GreenYellow;
+  -o-box-shadow: inset 4px 0 GreenYellow;
+  box-shadow: inset 4px 0 GreenYellow;
+}
+
+section .list li.category-Packed-meat {
+  -webkit-box-shadow: inset 4px 0 MediumBlue;
+  -moz-box-shadow: inset 4px 0 MediumBlue;
+  -ms-box-shadow: inset 4px 0 MediumBlue;
+  -o-box-shadow: inset 4px 0 MediumBlue;
+  box-shadow: inset 4px 0 MediumBlue;
+}
+
+section .list li.category-Pharmacy-products {
+  -webkit-box-shadow: inset 4px 0 Red;
+  -moz-box-shadow: inset 4px 0 Red;
+  -ms-box-shadow: inset 4px 0 Red;
+  -o-box-shadow: inset 4px 0 Red;
+  box-shadow: inset 4px 0 Red;
 }
