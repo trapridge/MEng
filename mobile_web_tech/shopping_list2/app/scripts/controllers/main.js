@@ -1,4 +1,4 @@
-function TodoCtrl($scope) {
+function TodoCtrl($scope, phonegapReady) {
   $scope.todos = [
     { text: 'beer', done: false, category: 'Beverages' },
     { text: 'coke', done: false, category: 'Beverages' },
@@ -61,7 +61,7 @@ function TodoAddCtrl($scope, $timeout, $http) {
 
       });
 
-    }, 200);
+    }, 500);
   };
 
   $scope.addTodo = function() {
@@ -80,16 +80,3 @@ function TodoAddCtrl($scope, $timeout, $http) {
   });
 
 }
-
-/*
-'use strict';
-
-angular.module('lungotestApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
-*/

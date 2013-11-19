@@ -83,6 +83,16 @@ module.exports = function (grunt) {
         options: {
           base: '<%= yeoman.dist %>'
         }
+      },
+      cordova: {
+        options: {
+          base: 'cordova/www'
+        }
+      },
+      android: {
+        options: {
+          base: 'cordova/platforms/android/assets/www'
+        }
       }
     },
     clean: {
@@ -245,6 +255,12 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      cordova: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        dest: 'cordova/www/',
+        src: '**'
       }
     },
     concurrent: {
@@ -300,6 +316,13 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
+    if (target === 'cordova') {
+      return grunt.task.run(['copy:cordova', 'connect:cordova:keepalive']);
+    }
+    if (target === 'android') {
+      return grunt.task.run(['connect:android:keepalive']);
+    }
+
 
     grunt.task.run([
       'clean:server',
