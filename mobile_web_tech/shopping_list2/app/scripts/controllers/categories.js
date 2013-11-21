@@ -1,4 +1,4 @@
-function CategoriesCtrl($scope, phonegapReady, $timeout, $http) {
+function CategoriesCtrl($scope) {
 
   $scope.addCategory = function() {
     if($scope.item && !_.contains($scope.categories, $scope.item)) {
@@ -21,6 +21,10 @@ function CategoriesCtrl($scope, phonegapReady, $timeout, $http) {
       array[oldIndex] = array[newIndex];
       array[newIndex] = temp;
     }
+  }
+
+  $scope.remove = function(index) {
+    $scope.categories.splice(index, 1);
   }
 
 }

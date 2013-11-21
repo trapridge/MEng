@@ -1,6 +1,6 @@
 <html ng-app="lungotestApp" lab-boot>
     <head>
-        <title>Ultimate Shopping List</title>
+        <title>YASL</title>
 
         <meta name="HandheldFriendly" content="True">
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -39,21 +39,21 @@
                         </label>
                     </fieldset>
                     
-                    <a href="#" ng-click="newAddItem()" class="button anchor margin bottom">Add to list</a>
+                    <a href="#" ng-click="addItem()" class="button anchor margin bottom">Add to list</a>
                 </form>
-                <ul ng-show="newExisting() > 0">
+                <ul ng-show="existing() > 0">
                     <li class="anchor theme">
                         <span>Items</span>
                         <div class="on-right">
-                            <span class="tag count">{{newRemaining()}} of {{newExisting()}} remaining</span>
+                            <span class="tag count">{{remaining()}} of {{existing()}} remaining</span>
                         </div>
                     </li>
                 </ul>
                 <ul ng:repeat="item in newItems">
-                    <li ng-show="item.items" class="anchor contrast">
+                    <li ng-show="item.items.length > 0" class="anchor contrast">
                         <span>{{item.category}}</span>
                         <div class="on-right">
-                            <span class="tag count">{{newRemaining(item.category)}} of {{newExisting(item.category)}} remaining</span>
+                            <span class="tag count">{{remaining(item.category)}} of {{existing(item.category)}} remaining</span>
                         </div>
                     </li>
                     <li ng:repeat="i in item.items">
@@ -67,7 +67,7 @@
                         
                     </li>
                 </ul>
-                <a ng-show="newExisting() > 0" href="#" ng-click="newArchive()" class="button anchor margin bottom">Clear shopped items</a>
+                <a ng-show="existing() > 0" href="#" ng-click="archive()" class="button anchor margin bottom">Clear shopped items</a>
             </article>
         </section>
 
@@ -96,7 +96,7 @@
                     <li ng-repeat="category in categories">
                         <div class="" style="text-align: center;">
                             <span>{{category}} <small style="display: inline;">(
-                                <span href="#" ng-click="categories.splice($index, 1)" class="constrast" style="display: inline;">
+                                <span href="#" ng-click="remove($index)" class="constrast" style="display: inline;">
                                     remove
                                 </span>)</small>
                             </span>
