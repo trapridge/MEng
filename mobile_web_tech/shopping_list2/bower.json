@@ -9,6 +9,7 @@
     "angular-cookies": "~1.2.0",
     "angular-sanitize": "~1.2.0",
     "angular-route": "~1.2.0",
+    "angular-touch": "~1.2.0",
     "lungo": "~2.2.1",
     "lungo-angular-bridge": "https://github.com/centralway/lungo-angular-bridge.git",
     "lodash": "~2.3.0",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
-    "angular-scenario": "~1.2.0"
+    "angular-scenario": "~1.2.0",
+    "phonegap": "2.0.0"
   }
 }

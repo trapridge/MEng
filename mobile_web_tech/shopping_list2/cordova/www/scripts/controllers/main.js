@@ -34,6 +34,23 @@ function TodoCtrl($scope, phonegapReady) {
   $scope.dewhitespace = function(whitespaced) {
     return whitespaced.replace(' ', '-');
   }
+
+  $scope.takePhoto = function() {
+
+    console.log('taking photo...');
+    navigator.camera.getPicture(function(imgUri) {
+        console.log('got photo!');
+
+        var image = document.getElementById("photo");
+        image.src = imgUri;
+    }, function() {
+        console.log('problem');
+        navigator.notification.alert("Photo fail :(", null, "Oh noes!", "I can cope with it");
+    }, {
+        quality: 100,
+        destinationType: Camera.DestinationType.FILE_URI
+    });
+    }
 }
 
 function TodoAddCtrl($scope, $timeout, $http) {
@@ -80,16 +97,3 @@ function TodoAddCtrl($scope, $timeout, $http) {
   });
 
 }
-
-/*
-'use strict';
-
-angular.module('lungotestApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
-*/

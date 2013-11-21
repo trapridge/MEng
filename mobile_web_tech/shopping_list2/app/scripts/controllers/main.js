@@ -1,82 +1,38 @@
-function TodoCtrl($scope, phonegapReady) {
-  $scope.todos = [
-    { text: 'beer', done: false, category: 'Beverages' },
-    { text: 'coke', done: false, category: 'Beverages' },
-    { text: 'beans', done: false, category: 'Canned food' },
-    { text: 'spam', done: false, category: 'Canned food' },
-    { text: 'milk', done: false, category: 'Dairy products' },
-    { text: 'butter', done: false, category: 'Dairy products' },
-    { text: 'cream', done: false, category: 'Dairy products' },
-  ];
 
-  $scope.$on('handleBroadcast', function(event, args) {
-    console.log('TodoCtrl::addTodo - received!');
-    $scope.todos.push({text:args.item, done:false, category: args.category});
-    $scope.todos.sort(function(a,b) { return (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0); });
-  });
 
-  $scope.remaining = function() {
-    var count = 0;
-    angular.forEach($scope.todos, function(todo) {
-      count += todo.done ? 0 : 1;
-    });
-    return count;
-  };
+function MainCtrl($scope, phonegapReady, $timeout, $http) {
+    $scope.newItems = localStorage.getItem('yasl-items') ? JSON.parse(localStorage.getItem('yasl-items')) : [];
+    $scope.categories = localStorage.getItem('yasl-categories') ? JSON.parse(localStorage.getItem('yasl-categories')) : [];
 
-  $scope.archive = function() {
-    var oldTodos = $scope.todos;
-    $scope.todos = [];
-    angular.forEach(oldTodos, function(todo) {
-      if (!todo.done) $scope.todos.push(todo);
-    });
-  };
+    $scope.category = $scope.categories[0];
 
-  $scope.dewhitespace = function(whitespaced) {
-    return whitespaced.replace(' ', '-');
-  }
-}
+    $scope.$watch('categories', function() {
+      console.log('categories changed!');
+      if($scope.categories.length > 0) {
+        // update dropdown selection
+        $scope.category = $scope.categories[0];
 
-function TodoAddCtrl($scope, $timeout, $http) {
+      }
+      // save to local storage
+      localStorage.setItem('yasl-categories', JSON.stringify($scope.categories));
 
-  var fetch = function (newValue) {
-    $timeout.cancel($scope.fetchTimeout);
-    $scope.fetchTimeout = $timeout(function () {
-
-      $http.jsonp('https://en.wikipedia.org/w/api.php?' + 
-        'format=json&prop=revisions&rvprop=content& ' + 
-        'action=query&titles=' + newValue + "&callback=JSON_CALLBACK").success(function(data) {
-
-        var string = JSON.stringify(data);
-
-        if(new RegExp('Baked goods').test(string)) { $scope.category = 'Baked goods'; return; }
-        if(new RegExp('Baking products').test(string)) { $scope.category = 'Baking products'; return; }
-        if(new RegExp('Beverages').test(string)) { $scope.category = 'Beverages'; return; }
-        if(new RegExp('Canned food').test(string)) { $scope.category = 'Canned food'; return; }
-        if(new RegExp('Coffee and tea').test(string)) { $scope.category = 'Coffee and tea'; return; }
-        if(new RegExp('Dairy products').test(string)) { $scope.category = 'Dairy products'; return; }
-        if(new RegExp('Fresh meat').test(string)) { $scope.category = 'Fresh meat'; return; }
-        if(new RegExp('Fruits and vegetables').test(string)) { $scope.category = 'Fruits and vegetables'; return; }
-        if(new RegExp('Packed meat').test(string)) { $scope.category = 'Packed meat'; return; }
-        if(new RegExp('Pharmacy products').test(string)) { $scope.category = 'Pharmacy products'; return; }
-
+      // recreate items array to verify order
+      var temp = [];
+      $scope.categories.forEach(function(element, index, array) {
+        var t = _.where($scope.newItems, { category: element });
+        if(t.length > 0) {
+          temp.push(t[0]);
+        }
+        else {
+          temp.push({category: element});
+        }
       });
+      $scope.newItems = temp;
 
-    }, 500);
-  };
+      // save to local storage
+      localStorage.setItem('yasl-items', JSON.stringify($scope.newItems));
+    }, true);
 
-  $scope.addTodo = function() {
-    if($scope.category) {
-      $scope.$emit('handleEmit', {item: $scope.item, category: $scope.category});
-      $scope.item = '';
-      $scope.category = '';
-      AppRouter.instance.back();
-    }
 
-  };
-
-  $scope.$watch('item', function(newValue) {
-    console.log('changed: ' + newValue);
-    fetch(newValue);
-  });
 
 }

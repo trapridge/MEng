@@ -26,7 +26,7 @@
                  </nav>
             </header>
 
-            <article class="active list indented scroll" ng-controller="TodoCtrl" id="main">
+            <article class="active list scroll" ng-controller="TodoCtrl" id="main">
                  <span class="remainingLabel">{{remaining()}} of {{todos.length}} remaining</span>
                 [ <a href="" ng-click="archive()">archive</a> ]
                 <ul>
@@ -39,7 +39,11 @@
                         <strong class="done-{{todo.done}}">{{todo.text}}</strong>
                         <!--<small>{{todo.category}}</small>-->
                     </li>
+  
                 </ul>
+
+                <img id="photo" src="" />
+                <button ng-click="takePhoto()">Photo</button>
 
             </article>
 
@@ -93,6 +97,7 @@
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
         <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
         <script type="text/javascript" src="bower_components/angular-phonegap-ready/ready.js"></script>
 
         <script type="text/javascript" src="bower_components/lungo-angular-bridge/dist/lungo-angular-bridge.js"></script>
@@ -102,7 +107,6 @@
         <script type="text/javascript" src="scripts/app.js"></script>
         <script type="text/javascript" src="scripts/controllers/main.js"></script>
 
-        <script type="text/javascript" src="js/index.js"></script>
     </body>
 
 </html>

@@ -40,6 +40,7 @@
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-route \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-sanitize \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-scenario \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/es5-shim \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/json3 \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/lodash \
@@ -83,6 +84,11 @@
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-scenario/jstd-scenario-adapter-config.js \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-scenario/jstd-scenario-adapter.js \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-scenario/README.md \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch/angular-touch.js \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch/angular-touch.min.js \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch/angular-touch.min.js.map \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch/bower.json \
+/Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/angular-touch/README.md \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/es5-shim/CHANGES \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/es5-shim/CONTRIBUTORS.md \
 /Users/jansaharju/Code/MEng/mobile_web_tech/shopping_list2/cordova/platforms/android/assets/www/bower_components/es5-shim/es5-sham.js \
