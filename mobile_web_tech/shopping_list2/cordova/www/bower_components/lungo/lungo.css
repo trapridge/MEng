@@ -193,7 +193,7 @@ form fieldset label.select,.form fieldset label.select{line-height:1.5em}
 .indented form fieldset > label:not(.absolute) + input:not([type="checkbox"]),.indented .form fieldset > label:not(.absolute) + input:not([type="checkbox"]),.indented form fieldset > label:not(.absolute) + label.select,.indented .form fieldset > label:not(.absolute) + label.select{width:75%}
 form label.select,.form label.select{position:relative;display:inline-block;font-size:inherit;line-height:inherit;padding:0 !important;}
 form label.select > select,.form label.select > select{-webkit-border-radius:0 !important;-moz-border-radius:0 !important;-ms-border-radius:0 !important;-o-border-radius:0 !important;border-radius:0 !important;margin:0;padding:0 .4em}
-form label.select:after,.form label.select:after{position:absolute;top:.15em;right:.3em;content:"▼";pointer-events:none;text-align:center}
+form label.select:after,.form label.select:after{position:absolute;top:.15em;right:.3em;content:"v";pointer-events:none;text-align:center}
 form input[type="range"],.form input[type="range"]{-webkit-appearance:none;outline:none;height:5px;width:100%;padding:0;border:none;margin:1em 0;background:#f00;}
 form input[type="range"]::-webkit-slider-thumb,.form input[type="range"]::-webkit-slider-thumb{position:relative;width:26px;height:26px;-webkit-appearance:none;border:none}
 form [data-progress],.form [data-progress]{width:100%;margin-bottom:.5em;}

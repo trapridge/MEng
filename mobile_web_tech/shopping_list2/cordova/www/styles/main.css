@@ -1,3 +1,5 @@
+
+
 section .list li.category-Baked-goods {
   -webkit-box-shadow: inset 4px 0 Brown;
   -moz-box-shadow: inset 4px 0 Brown;
@@ -76,4 +78,12 @@ section .list li.category-Pharmacy-products {
   -ms-box-shadow: inset 4px 0 Red;
   -o-box-shadow: inset 4px 0 Red;
   box-shadow: inset 4px 0 Red;
+}
+
+section .list li.categorynone {
+  -webkit-box-shadow: inset 0px 0 Brown;
+  -moz-box-shadow: inset 0px 0 Brown;
+  -ms-box-shadow: inset 0px 0 Brown;
+  -o-box-shadow: inset 0px 0 Brown;
+  box-shadow: inset 0px 0 Brown;
 }
