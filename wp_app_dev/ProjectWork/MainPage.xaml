@@ -51,11 +51,23 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
- 
-            <!--Pivot item two-->
-            <controls:PivotItem Header="projects"> 
+
+            <controls:PivotItem Header="labels">
                 <!--Triple line list no text wrapping-->
-                    <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17">
+                                <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding LineThree}" TextWrapping="Wrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="projects"> 
+                    <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,17">
@@ -67,21 +79,19 @@
                     </ListBox>
             </controls:PivotItem>
 
-            <!--Pivot item three-->
-            <controls:PivotItem Header="labels">
-                <!--Triple line list no text wrapping-->
-                <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+            <controls:PivotItem Header="networks">
+                <ListBox x:Name="FourthListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
                                 <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineThree}" TextWrapping="Wrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
-            
+
         </controls:Pivot>
     </Grid>
 
@@ -91,19 +101,17 @@
     </shell:SystemTray.ProgressIndicator>
 -->
     
-    <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <!--
             <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
             -->
+            <shell:ApplicationBarIconButton IconUri="/Images/MB_0010_tasks.png" Text="Filter"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.settings.rest.png" Text="Sort"/>
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.new.rest.png" Text="Add new"/>
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.sync.rest.png" Text="Refresh" Click="ApplicationBarIconButton_Click" />
             <shell:ApplicationBar.MenuItems>
-                <!--
-                <shell:ApplicationBarMenuItem Text="Change workspace"/>
-                -->
-                <shell:ApplicationBarMenuItem Text="Log in" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="Connect" Click="ApplicationBarMenuItem_Click" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

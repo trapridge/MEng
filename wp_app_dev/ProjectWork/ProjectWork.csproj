@@ -16,7 +16,7 @@
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
+    <SupportedCultures>fi
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -63,7 +63,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="L10N.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>L10N.resx</DependentUpon>
+    </Compile>
+    <Compile Include="L10N.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>L10N.fi.resx</DependentUpon>
+    </Compile>
     <Compile Include="ProducteevTasks.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -97,10 +108,22 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\appbar.feature.settings.rest.png" />
     <Content Include="Images\appbar.new.rest.png" />
     <Content Include="Images\appbar.sync.rest.png" />
+    <Content Include="Images\MB_0010_tasks.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="test.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="L10N.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>L10N.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L10N.fi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>L10N.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
