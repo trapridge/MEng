@@ -61,11 +61,38 @@ namespace ProjectWork {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Labels.
+        /// </summary>
+        public static string labelsTitle {
+            get {
+                return ResourceManager.GetString("labelsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Networks.
+        /// </summary>
+        public static string networksTitle {
+            get {
+                return ResourceManager.GetString("networksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        public static string projectsTitle {
+            get {
+                return ResourceManager.GetString("projectsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tasks.
         /// </summary>
-        public static string tasks_title {
+        public static string tasksTitle {
             get {
-                return ResourceManager.GetString("tasks_title", resourceCulture);
+                return ResourceManager.GetString("tasksTitle", resourceCulture);
             }
         }
     }
