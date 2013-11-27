@@ -117,16 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="activeStatus" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="completedStatus" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="fivePriority" xml:space="preserve">
+    <value>Very High</value>
+  </data>
+  <data name="fourPriority" xml:space="preserve">
+    <value>High</value>
+  </data>
   <data name="labelsTitle" xml:space="preserve">
-    <value>Labels</value>
+    <value>labels</value>
   </data>
   <data name="networksTitle" xml:space="preserve">
-    <value>Networks</value>
+    <value>networks</value>
+  </data>
+  <data name="onePriority" xml:space="preserve">
+    <value>Very Low</value>
+  </data>
+  <data name="priority" xml:space="preserve">
+    <value>Priority</value>
   </data>
   <data name="projectsTitle" xml:space="preserve">
-    <value>Projects</value>
+    <value>projects</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
   </data>
   <data name="tasksTitle" xml:space="preserve">
-    <value>Tasks</value>
+    <value>tasks</value>
+  </data>
+  <data name="threePriority" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="twoPriority" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="zeroPriority" xml:space="preserve">
+    <value>None</value>
   </data>
 </root>

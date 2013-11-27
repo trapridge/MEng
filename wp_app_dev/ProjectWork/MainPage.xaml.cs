@@ -23,7 +23,7 @@ namespace ProjectWork
     public partial class MainPage : PhoneApplicationPage
     {
         private string access_token;
-        private string refresh_token;
+        private string sort_mode = "title";
         IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
         // Constructor
@@ -41,9 +41,11 @@ namespace ProjectWork
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (settings.TryGetValue("access_key", out access_token))
+            string at = "";
+            if (settings.TryGetValue("access_token", out at))
             {
-
+                Debug.WriteLine("Found access_token from storage");
+                access_token = at;
             }
 
             if (!App.ViewModel.IsDataLoaded)
@@ -56,8 +58,26 @@ namespace ProjectWork
         {
             // login to producteev here
             my_popup_xaml.IsOpen = true;
+            // connect
+            connectToProducteev();
         }
 
+        private void connectToProducteev()
+        {
+            //string auth_url = "https://www.producteev.com/oauth/v2/auth?client_id=526c1ce17374607236000000_1do9mo8ue98kgcssgo8ksg84o88wkgos40ks0c44480o0w448w&response_type=token&redirect_uri=http%3A%2F%2Fwww.google.com";
+            string auth_url = "http://goo.gl/b3WUJI";
+
+            webBrowser1.Visibility = Visibility.Visible;
+
+            Debug.WriteLine("Connecting to login...");
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                Debug.WriteLine("Connecting to login2...");
+                webBrowser1.Navigate(new Uri(auth_url));
+            });
+
+        }
         
         Boolean done = false;
         private void webBrowser1_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -84,18 +104,6 @@ namespace ProjectWork
 
         private void btn_continue_Click(object sender, RoutedEventArgs e)
         {
-            //string auth_url = "https://www.producteev.com/oauth/v2/auth?client_id=526c1ce17374607236000000_1do9mo8ue98kgcssgo8ksg84o88wkgos40ks0c44480o0w448w&response_type=token&redirect_uri=http%3A%2F%2Fwww.google.com";
-            string auth_url = "http://goo.gl/b3WUJI";
-            
-            webBrowser1.Visibility = Visibility.Visible;
-
-            Debug.WriteLine("Connecting to login...");
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                Debug.WriteLine("Connecting to login2...");
-                webBrowser1.Navigate(new Uri(auth_url));
-            });
 
         }
 
@@ -117,14 +125,29 @@ namespace ProjectWork
                 foreach (KeyValuePair<string, string> keys in Helpers.ParseQueryString(e.Uri)) { 
                     if(keys.Key == "access_token") {
                         access_token = keys.Value;
-                        settings.Add("access_token", access_token);
+
+                        // If the key exists
+                        if (settings.Contains("access_token"))
+                        {
+                            // Store the new value
+                            settings["access_token"] = access_token;
+                        }
+                        else
+                        {
+                            settings["access_token"] = access_token;
+                            
+                        }
+                        settings.Save();
+                        
                         Debug.WriteLine("Found access token: " + access_token);
                     }
+                    /*
                     if (keys.Key == "refresh_token")
                     {
                         refresh_token = keys.Value;
                         Debug.WriteLine("Found refresh token: " + refresh_token);
                     }
+                     */
                 }
 
             }
@@ -156,13 +179,12 @@ namespace ProjectWork
         ProgressIndicator progress = new ProgressIndicator
         {
             IsVisible = false,
-            IsIndeterminate = true,
-            //Text = "Refreshing tasks"
+            IsIndeterminate = true
         };
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
-            string tasks_query = "https://www.producteev.com/api/tasks/search?&alias=responsible&sort=priority&order=asc&access_token=" + access_token;
+            string tasks_query = "https://www.producteev.com/api/tasks/search?&alias=all&sort=" + sort_mode + "&order=asc&access_token=" + access_token;
 
 
             System.Uri myUri = new System.Uri(tasks_query);
@@ -226,20 +248,49 @@ namespace ProjectWork
                 
             }
         }
+
+        private void FirstListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void pivotControl_LoadedPivotItem(object sender, PivotItemEventArgs e)
+        {
+            Debug.WriteLine("Loaded pivot item: " + e.Item.Header);
+
+            if (e.Item.Name.Equals("tasksPivotItem"))
+            {
+                ApplicationBar.IsVisible = true;
+            }
+            else
+            {
+                ApplicationBar.IsVisible = false;
+            }
+        }
     }
 
     
     public class TaskData
     {
         public string title { get; set; }
-        public int priority { get; set; }
-        public int status { get; set; }
+        public string priority { get; set; }
+        public string status { get; set; }
 
         public TaskData(string title, int priority, int status)
         {
             this.title = title;
-            this.priority = priority;
-            this.status = status;
+
+            switch(priority) {
+                case 0: this.priority = L10N.priority + ": " + L10N.zeroPriority; break;
+                case 1: this.priority = L10N.priority + ": " + L10N.onePriority; break;
+                case 2: this.priority = L10N.priority + ": " + L10N.twoPriority; break;
+                case 3: this.priority = L10N.priority + ": " + L10N.threePriority; break;
+                case 4: this.priority = L10N.priority + ": " + L10N.fourPriority; break;
+                case 5: this.priority = L10N.priority + ": " + L10N.fivePriority; break;
+                default: this.priority = L10N.priority + ": " + L10N.zeroPriority; break;
+            }
+
+            this.status = status == 1 ? (L10N.status + ": " + L10N.activeStatus) : (L10N.status + ": " +L10N.completedStatus);
         }
 
     }

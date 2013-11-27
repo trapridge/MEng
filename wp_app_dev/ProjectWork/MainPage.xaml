@@ -20,48 +20,27 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
-        <Popup x:Name="my_popup_xaml" Grid.Row="2">
-            <Border  BorderThickness="2" Margin="10" BorderBrush="{StaticResource PhoneAccentBrush}">
-                <StackPanel Background="LightBlue">
-                    <Image Source="/Images/disclaimer.png" HorizontalAlignment="Center" Stretch="Fill" Margin="0,15,0,5"/>
-                    <TextBlock Text="Disclaimer" TextAlignment="Center" FontSize="40" Margin="10,0" />
-                    <TextBlock Text="This is a pop-up window to display disclaimer" FontSize="21" Margin="10,0" />
-                    <phone:WebBrowser Name="webBrowser1" VerticalAlignment="Top" Visibility="Collapsed" LoadCompleted="webBrowser1_LoadCompleted" IsScriptEnabled="True" Height="400" Navigated="webBrowser1_Navigated"></phone:WebBrowser>
-                    <StackPanel Orientation="Horizontal" Margin="0,10">
-                        <Button x:Name="btn_continue"  Content="continue" Width="215" Click="btn_continue_Click"/>
-                        <Button x:Name="btn_cancel"    Content="cancel"   Width="215" Click="btn_cancel_Click"/>
-                    </StackPanel>
+        <Popup x:Name="my_popup_xaml">
+            <Border BorderThickness="2" BorderBrush="{StaticResource PhoneAccentBrush}" Width="{Binding ActualWidth, ElementName=LayoutRoot}" Background="{StaticResource PhoneBackgroundBrush}">
+                <StackPanel>
+                    <TextBlock Text="Connect to Producteev" TextAlignment="Center" Margin="10,0" Style="{StaticResource PhoneTextTitle3Style}" />
+                    <phone:WebBrowser Name="webBrowser1" VerticalAlignment="Stretch" Visibility="Collapsed" LoadCompleted="webBrowser1_LoadCompleted" IsScriptEnabled="True" Height="530" Navigated="webBrowser1_Navigated"></phone:WebBrowser>
+                    <Button x:Name="btn_cancel" Content="cancel" Width="215" Click="btn_cancel_Click"/>
                 </StackPanel>
             </Border>
-
         </Popup>
 
         <!--Pivot Control-->
-        <controls:Pivot Title="pasks">
+        <controls:Pivot Title="pasks" Name="pivotControl" LoadedPivotItem="pivotControl_LoadedPivotItem">
             <!--Pivot item one-->
-            <controls:PivotItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.tasksTitle}">
-                <!--Double line list with text wrapping-->
-                <ListBox x:Name="FirstListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+            <controls:PivotItem Name="tasksPivotItem" Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.tasksTitle}">
+                <ListBox x:Name="FirstListBox" Margin="0,0,0,0" ItemsSource="{Binding Items}" SelectionChanged="FirstListBox_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                          <StackPanel Margin="0,0,0,17" Width="432" Height="Auto">
-                                <TextBlock LineStackingStrategy="BlockLineHeight" LineHeight="25" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" HorizontalAlignment="Left" />
-                              <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                <TextBlock Text="{Binding LineThree}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PivotItem>
-
-            <controls:PivotItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.labelsTitle}">
-                <!--Triple line list no text wrapping-->
-                <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineThree}" TextWrapping="Wrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                          <StackPanel Width="Auto" Height="Auto" Margin="12,0,0,4">
+                            <TextBlock LineStackingStrategy="BlockLineHeight" LineHeight="25" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" />
+                            <TextBlock Text="{Binding LineTwo}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-5,12,0" />
+                            <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -81,19 +60,6 @@
                     </ListBox>
             </controls:PivotItem>
 
-            <controls:PivotItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.networksTitle}">
-                <ListBox x:Name="FourthListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PivotItem>
-
         </controls:Pivot>
     </Grid>
 
@@ -105,10 +71,6 @@
     
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <!--
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            -->
-            <shell:ApplicationBarIconButton IconUri="/Images/MB_0010_tasks.png" Text="Filter"/>
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.settings.rest.png" Text="Sort"/>
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.new.rest.png" Text="Add new"/>
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.sync.rest.png" Text="Refresh" Click="ApplicationBarIconButton_Click" />

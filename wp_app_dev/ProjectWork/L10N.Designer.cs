@@ -61,7 +61,43 @@ namespace ProjectWork {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Labels.
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string activeStatus {
+            get {
+                return ResourceManager.GetString("activeStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        public static string completedStatus {
+            get {
+                return ResourceManager.GetString("completedStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very High.
+        /// </summary>
+        public static string fivePriority {
+            get {
+                return ResourceManager.GetString("fivePriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High.
+        /// </summary>
+        public static string fourPriority {
+            get {
+                return ResourceManager.GetString("fourPriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to labels.
         /// </summary>
         public static string labelsTitle {
             get {
@@ -70,7 +106,7 @@ namespace ProjectWork {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Networks.
+        ///   Looks up a localized string similar to networks.
         /// </summary>
         public static string networksTitle {
             get {
@@ -79,7 +115,25 @@ namespace ProjectWork {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projects.
+        ///   Looks up a localized string similar to Very Low.
+        /// </summary>
+        public static string onePriority {
+            get {
+                return ResourceManager.GetString("onePriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Priority.
+        /// </summary>
+        public static string priority {
+            get {
+                return ResourceManager.GetString("priority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to projects.
         /// </summary>
         public static string projectsTitle {
             get {
@@ -88,11 +142,47 @@ namespace ProjectWork {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tasks.
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tasks.
         /// </summary>
         public static string tasksTitle {
             get {
                 return ResourceManager.GetString("tasksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string threePriority {
+            get {
+                return ResourceManager.GetString("threePriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        public static string twoPriority {
+            get {
+                return ResourceManager.GetString("twoPriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string zeroPriority {
+            get {
+                return ResourceManager.GetString("zeroPriority", resourceCulture);
             }
         }
     }
