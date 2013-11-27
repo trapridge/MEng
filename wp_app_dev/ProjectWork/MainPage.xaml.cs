@@ -22,6 +22,7 @@ namespace ProjectWork
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private string currentProject = "";
         private string access_token;
         private string sort_mode = "title";
         IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
@@ -50,7 +51,8 @@ namespace ProjectWork
 
             if (!App.ViewModel.IsDataLoaded)
             {
-                App.ViewModel.LoadData();
+                getTasks();
+                //App.ViewModel.LoadData();
             }
         }
 
@@ -62,43 +64,23 @@ namespace ProjectWork
             connectToProducteev();
         }
 
+        private Uri producteevLoginUri = new Uri("https://www.producteev.com/oauth/v2/auth_login");
+        private HttpWebRequest _webRequest;
+        private CookieContainer _cookieContainer = new CookieContainer();
+
         private void connectToProducteev()
         {
-            //string auth_url = "https://www.producteev.com/oauth/v2/auth?client_id=526c1ce17374607236000000_1do9mo8ue98kgcssgo8ksg84o88wkgos40ks0c44480o0w448w&response_type=token&redirect_uri=http%3A%2F%2Fwww.google.com";
             string auth_url = "http://goo.gl/b3WUJI";
-
-            webBrowser1.Visibility = Visibility.Visible;
-
-            Debug.WriteLine("Connecting to login...");
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Debug.WriteLine("Connecting to login2...");
+                _webRequest = (HttpWebRequest)HttpWebRequest.Create(producteevLoginUri);
+                _webRequest.CookieContainer = _cookieContainer;
+
                 webBrowser1.Navigate(new Uri(auth_url));
+                webBrowser1.Visibility = Visibility.Visible;
             });
 
-        }
-        
-        Boolean done = false;
-        private void webBrowser1_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-            /*    
-                if (!done) 
-                {
-                    string html = webBrowser1.SaveToString();
-                
-                    string hackstring = "<meta name=\"viewport\" content=\"width=208,height=377, user-scalable=no\" />";
-                    html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring);
-                    //string hackstring2 = "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">";
-                    //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring2);
-
-                    //string hackstring3 = "<script src=\"http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js\"></script><script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>";
-                    //html = html.Insert(html.IndexOf("<head>", 0) + 6, hackstring3);
-
-                    webBrowser1.NavigateToString(html);
-                    done = true;
-                }   
-             */
         }
         
 
@@ -112,7 +94,17 @@ namespace ProjectWork
             my_popup_xaml.IsOpen = false;
         }
 
+        
+        public void ClearCookies(Uri uri)
+        {
+            var cookies = _cookieContainer.GetCookies(uri);
 
+            foreach (Cookie cookie in cookies)
+            {
+                cookie.Discard = true;
+                cookie.Expired = true;
+            }
+        }
 
 
         private void webBrowser1_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -141,18 +133,16 @@ namespace ProjectWork
                         
                         Debug.WriteLine("Found access token: " + access_token);
                     }
-                    /*
-                    if (keys.Key == "refresh_token")
-                    {
-                        refresh_token = keys.Value;
-                        Debug.WriteLine("Found refresh token: " + refresh_token);
-                    }
-                     */
+
                 }
 
+                ClearCookies(producteevLoginUri);
+                my_popup_xaml.IsOpen = false;
+                webBrowser1.Visibility = Visibility.Collapsed;
+
             }
-             
-                 
+
+            
         }
 
         private bool strCmp(string a, string b)
@@ -184,20 +174,44 @@ namespace ProjectWork
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
-            string tasks_query = "https://www.producteev.com/api/tasks/search?&alias=all&sort=" + sort_mode + "&order=asc&access_token=" + access_token;
+            getTasks();
+        }
 
+        private void getTasks()
+        {
+            string tasks_query = "https://www.producteev.com/api/tasks/search?&alias=all&sort=" + sort_mode + "&order=asc&access_token=" + access_token;
 
             System.Uri myUri = new System.Uri(tasks_query);
             HttpWebRequest myRequest = (HttpWebRequest)HttpWebRequest.Create(myUri);
             myRequest.Method = "POST";
             myRequest.ContentType = "application/json";
-            
-            myRequest.BeginGetResponse(new AsyncCallback(TasksCallback), myRequest);
+
+            /*
+            string postData = "{metaData:{appVersion:1.40},....}";
+            byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(postData);
+            postStream.Write(byteArray, 0, postData.Length);
+            postStream.Close();
+            */
+
+            //myRequest.BeginGetResponse(new AsyncCallback(TasksCallback), myRequest);
+            myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), myRequest);
+    
 
             progress.IsVisible = true;
         }
 
+        public void GetRequestStreamCallback(IAsyncResult asynchronousResult)
+        {
+            HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
+            Stream postStream = request.EndGetRequestStream(asynchronousResult);
+            //string postData = currentProject.Length > 0 ? "{\"projects\":[\"" + currentProject + "\"]}" : "";
+            string postData = "";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData.ToString());
+            postStream.Write(byteArray, 0, postData.Length);
+            postStream.Close();
 
+            request.BeginGetResponse(new AsyncCallback(TasksCallback), request);
+        }
 
 
         private void TasksCallback(IAsyncResult asynchronousResult)
@@ -230,19 +244,30 @@ namespace ProjectWork
                 
 
                 List<TaskData> tasks = new List<TaskData>();
+                List<ProjectData> projects = new List<ProjectData>();
 
-
+                List<string> projectsIds = new List<string>();
                 foreach(ProjectWork.ProducteevTasks.Task task in tasksModel.tasks)
                 {
-                    tasks.Add(new TaskData(task.title, task.priority, task.status));
+                    if (currentProject.Length == 0 || currentProject.Equals("all") || currentProject.Equals(task.project.id))
+                    {
+                        tasks.Add(new TaskData(task.title, task.priority, task.status));
+                    }
+
+                    if (!projectsIds.Contains(task.project.id))
+                    {
+                        projects.Add(new ProjectData(task.project.title, task.project.id));
+                        projectsIds.Add(task.project.id);
+                    }
                 }
 
-                
+                projects.Add(new ProjectData("All projects", "all"));
 
                 System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    App.ViewModel.LoadData(tasks);
+                    App.ViewModel.LoadData(tasks, projects);
                     progress.IsVisible = false;
+                    pivotControl.SelectedIndex = 0;
                 });
 
                 
@@ -267,9 +292,17 @@ namespace ProjectWork
                 ApplicationBar.IsVisible = false;
             }
         }
+
+        private void TextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Debug.WriteLine("tapped: " + ((ItemViewModel)ThirdListBox.SelectedItem).LineTwo);
+            currentProject = ((ItemViewModel)ThirdListBox.SelectedItem).LineTwo;
+            getTasks();
+        }
     }
 
     
+
     public class TaskData
     {
         public string title { get; set; }
@@ -295,6 +328,17 @@ namespace ProjectWork
 
     }
 
-    
+    public class ProjectData
+    {
+        public string title { get; set; }
+        public string id { get; set; }
+        
+        public ProjectData(string title, string id)
+        {
+            this.title = title;
+            this.id = id;
+        }
+
+    }
 }
 

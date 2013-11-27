@@ -21,12 +21,14 @@ namespace ProjectWork
         public MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
+            this.ProjectItems = new ObservableCollection<ItemViewModel>();
         }
 
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
         public ObservableCollection<ItemViewModel> Items { get; private set; }
+        public ObservableCollection<ItemViewModel> ProjectItems { get; private set; }
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>
@@ -61,6 +63,7 @@ namespace ProjectWork
         public void LoadData()
         {
             // Sample data; replace with real data
+            /*
             this.Items.Add(new ItemViewModel() { LineOne = "runtime one", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
             this.Items.Add(new ItemViewModel() { LineOne = "runtime two", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
             this.Items.Add(new ItemViewModel() { LineOne = "runtime three", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent" });
@@ -79,19 +82,26 @@ namespace ProjectWork
             this.Items.Add(new ItemViewModel() { LineOne = "runtime sixteen", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
 
             this.IsDataLoaded = true;
+             */
         }
 
-        public void LoadData(List<TaskData> data)
+        public void LoadData(List<TaskData> data, List<ProjectData> projectsData)
         //public void LoadData(ProjectWork.ProducteevTasks.RootObject data)
         {
             this.Items.Clear();
+            this.ProjectItems.Clear();
 
             foreach (TaskData task in data) {
-
-
-
                 this.Items.Add(new ItemViewModel() { LineOne = task.title, LineTwo = task.priority.ToString(), LineThree = task.status.ToString() });
             }
+
+            foreach (ProjectData project in projectsData)
+            {
+                this.ProjectItems.Add(new ItemViewModel() { LineOne = project.title, LineTwo = project.id, LineThree = "" });
+            }
+
+
+            this.IsDataLoaded = true;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

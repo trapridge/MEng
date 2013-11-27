@@ -24,7 +24,7 @@
             <Border BorderThickness="2" BorderBrush="{StaticResource PhoneAccentBrush}" Width="{Binding ActualWidth, ElementName=LayoutRoot}" Background="{StaticResource PhoneBackgroundBrush}">
                 <StackPanel>
                     <TextBlock Text="Connect to Producteev" TextAlignment="Center" Margin="10,0" Style="{StaticResource PhoneTextTitle3Style}" />
-                    <phone:WebBrowser Name="webBrowser1" VerticalAlignment="Stretch" Visibility="Collapsed" LoadCompleted="webBrowser1_LoadCompleted" IsScriptEnabled="True" Height="530" Navigated="webBrowser1_Navigated"></phone:WebBrowser>
+                    <phone:WebBrowser Name="webBrowser1" VerticalAlignment="Stretch" Visibility="Collapsed" IsScriptEnabled="True" Height="530" Navigated="webBrowser1_Navigated"></phone:WebBrowser>
                     <Button x:Name="btn_cancel" Content="cancel" Width="215" Click="btn_cancel_Click"/>
                 </StackPanel>
             </Border>
@@ -37,10 +37,10 @@
                 <ListBox x:Name="FirstListBox" Margin="0,0,0,0" ItemsSource="{Binding Items}" SelectionChanged="FirstListBox_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                          <StackPanel Width="Auto" Height="Auto" Margin="12,0,0,4">
+                          <StackPanel Width="Auto" Height="Auto" Margin="12,0,0,6">
                             <TextBlock LineStackingStrategy="BlockLineHeight" LineHeight="25" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" />
                             <TextBlock Text="{Binding LineTwo}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-5,12,0" />
-                            <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-5,12,0" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -48,12 +48,12 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.projectsTitle}"> 
-                    <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                    <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding ProjectItems}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,17">
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextLargeStyle}" Tap="TextBlock_Tap" />
+                                    <!--<TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
