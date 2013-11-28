@@ -92,7 +92,7 @@ namespace ProjectWork
             this.ProjectItems.Clear();
 
             foreach (TaskData task in data) {
-                this.Items.Add(new ItemViewModel() { LineOne = task.title, LineTwo = task.priority.ToString(), LineThree = task.status.ToString() });
+                this.Items.Add(new ItemViewModel() { LineOne = task.title, LineTwo = task.priority.ToString(), LineThree = task.status.ToString(), LineFour = task.id });
             }
 
             foreach (ProjectData project in projectsData)

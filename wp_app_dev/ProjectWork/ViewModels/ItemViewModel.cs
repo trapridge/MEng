@@ -78,6 +78,27 @@ namespace ProjectWork
             }
         }
 
+        private string _lineFour;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public string LineFour
+        {
+            get
+            {
+                return _lineFour;
+            }
+            set
+            {
+                if (value != _lineFour)
+                {
+                    _lineFour = value;
+                    NotifyPropertyChanged("LineFour");
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)
         {

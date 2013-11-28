@@ -10,11 +10,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 
 namespace ProjectWork
 {
     public static class Helpers
     {
+        public static IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
         private static readonly Regex QueryStringRegex = new Regex(@"[\?&#](?<name>[^&=]+)=(?<value>[^&=]+)");
 
         // from SO

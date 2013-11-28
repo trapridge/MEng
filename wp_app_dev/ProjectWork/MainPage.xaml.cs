@@ -17,15 +17,17 @@ using System.Runtime.Serialization.Json;
 using Microsoft.Phone.Shell;
 using System.Text.RegularExpressions;
 using System.IO.IsolatedStorage;
+using System.Windows.Controls.Primitives;
+using System.Windows.Navigation;
 
 namespace ProjectWork
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private string currentProject = "";
+        private string currentProject = "all";
         private string access_token;
         private string sort_mode = "title";
-        IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+        
 
         // Constructor
         public MainPage()
@@ -43,7 +45,7 @@ namespace ProjectWork
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             string at = "";
-            if (settings.TryGetValue("access_token", out at))
+            if (Helpers.settings.TryGetValue("access_token", out at))
             {
                 Debug.WriteLine("Found access_token from storage");
                 access_token = at;
@@ -53,6 +55,26 @@ namespace ProjectWork
             {
                 getTasks();
                 //App.ViewModel.LoadData();
+            }
+
+            if (currentProject.Equals("all"))
+            {
+                ApplicationBarIconButton btn = (ApplicationBarIconButton)ApplicationBar.Buttons[1];
+                btn.IsEnabled = false;
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            string from;
+            if (NavigationContext.QueryString.TryGetValue("from", out from))
+            { 
+                if(from.Equals("taskPage"))
+                {
+                    //getTasks();
+                }
             }
         }
 
@@ -119,17 +141,17 @@ namespace ProjectWork
                         access_token = keys.Value;
 
                         // If the key exists
-                        if (settings.Contains("access_token"))
+                        if (Helpers.settings.Contains("access_token"))
                         {
                             // Store the new value
-                            settings["access_token"] = access_token;
+                            Helpers.settings["access_token"] = access_token;
                         }
                         else
                         {
-                            settings["access_token"] = access_token;
+                            Helpers.settings["access_token"] = access_token;
                             
                         }
-                        settings.Save();
+                        Helpers.settings.Save();
                         
                         Debug.WriteLine("Found access token: " + access_token);
                     }
@@ -185,18 +207,8 @@ namespace ProjectWork
             HttpWebRequest myRequest = (HttpWebRequest)HttpWebRequest.Create(myUri);
             myRequest.Method = "POST";
             myRequest.ContentType = "application/json";
-
-            /*
-            string postData = "{metaData:{appVersion:1.40},....}";
-            byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(postData);
-            postStream.Write(byteArray, 0, postData.Length);
-            postStream.Close();
-            */
-
-            //myRequest.BeginGetResponse(new AsyncCallback(TasksCallback), myRequest);
             myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), myRequest);
     
-
             progress.IsVisible = true;
         }
 
@@ -229,6 +241,7 @@ namespace ProjectWork
                 System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     progress.IsVisible = false;
+                    MessageBox.Show("Connection problem.");
                 });
                 return;
             }
@@ -241,8 +254,6 @@ namespace ProjectWork
                 DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(ProducteevTasks.RootObject));
                 ProducteevTasks.RootObject tasksModel = (ProducteevTasks.RootObject)jsonSerializer.ReadObject(stream);
 
-                
-
                 List<TaskData> tasks = new List<TaskData>();
                 List<ProjectData> projects = new List<ProjectData>();
 
@@ -251,7 +262,7 @@ namespace ProjectWork
                 {
                     if (currentProject.Length == 0 || currentProject.Equals("all") || currentProject.Equals(task.project.id))
                     {
-                        tasks.Add(new TaskData(task.title, task.priority, task.status));
+                        tasks.Add(new TaskData(task.title, task.priority, task.status, task.id));
                     }
 
                     if (!projectsIds.Contains(task.project.id))
@@ -274,10 +285,6 @@ namespace ProjectWork
             }
         }
 
-        private void FirstListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void pivotControl_LoadedPivotItem(object sender, PivotItemEventArgs e)
         {
@@ -297,8 +304,55 @@ namespace ProjectWork
         {
             Debug.WriteLine("tapped: " + ((ItemViewModel)ThirdListBox.SelectedItem).LineTwo);
             currentProject = ((ItemViewModel)ThirdListBox.SelectedItem).LineTwo;
+
+            ApplicationBarIconButton btn = (ApplicationBarIconButton)ApplicationBar.Buttons[1];
+            if (currentProject.Equals("all"))
+            {
+                btn.IsEnabled = false;
+            }
+            else {
+                // adding works not
+                //btn.IsEnabled = true;
+            }
+            
+            getTasks();
+
+
+        }
+
+        private void sortButton_Click(object sender, EventArgs e)
+        {
+            ApplicationBarIconButton btn = (ApplicationBarIconButton)ApplicationBar.Buttons[0];
+
+            if (sort_mode.Equals("title"))
+            {
+                sort_mode = "priority";
+                btn.Text = "Sort by title";
+            }
+            else
+            {
+                sort_mode = "title";
+                btn.Text = "Sort by priority";
+            }
             getTasks();
         }
+
+
+        private void TextBlock_Tap_1(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ItemViewModel t = ((ItemViewModel)FirstListBox.SelectedItem);
+
+            Debug.WriteLine("tapped: " + t.LineOne);
+            Debug.WriteLine("Navigating to: " + "/TaskPage.xaml?title=" + t.LineOne + "&priority=" + t.LineTwo + "&status=" + t.LineThree + "&id=" + t.LineFour + "&project=" + currentProject);
+            NavigationService.Navigate(new Uri("/TaskPage.xaml?title=" + t.LineOne + "&priority=" + t.LineTwo + "&status=" + t.LineThree + "&id=" + t.LineFour + "&project=" + currentProject , UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/TaskPage.xaml?project=" + currentProject, UriKind.Relative));
+        }
+
+
     }
 
     
@@ -308,8 +362,9 @@ namespace ProjectWork
         public string title { get; set; }
         public string priority { get; set; }
         public string status { get; set; }
+        public string id { get; set; }
 
-        public TaskData(string title, int priority, int status)
+        public TaskData(string title, int priority, int status, string id)
         {
             this.title = title;
 
@@ -324,6 +379,7 @@ namespace ProjectWork
             }
 
             this.status = status == 1 ? (L10N.status + ": " + L10N.activeStatus) : (L10N.status + ": " +L10N.completedStatus);
+            this.id = id;
         }
 
     }

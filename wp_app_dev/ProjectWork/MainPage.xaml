@@ -30,15 +30,31 @@
             </Border>
         </Popup>
 
+        <Popup x:Name="sortPopUp">
+            <Border BorderThickness="2" BorderBrush="{StaticResource PhoneAccentBrush}" Width="{Binding ActualWidth, ElementName=LayoutRoot}" Background="{StaticResource PhoneBackgroundBrush}">
+                <Grid>
+                    <Button Content="Title" HorizontalAlignment="Left" />
+                    <Button Content="Priority" HorizontalAlignment="Right" />
+                </Grid>
+                <!--
+                <StackPanel>
+                    <TextBlock Text="Connect to Producteev" TextAlignment="Center" Margin="10,0" Style="{StaticResource PhoneTextTitle3Style}" />
+                    <phone:WebBrowser Name="webBrowser1" VerticalAlignment="Stretch" Visibility="Collapsed" IsScriptEnabled="True" Height="530" Navigated="webBrowser1_Navigated"></phone:WebBrowser>
+                    <Button x:Name="btn_cancel" Content="cancel" Width="215" Click="btn_cancel_Click"/>
+                </StackPanel>
+                -->
+            </Border>
+        </Popup>
+
         <!--Pivot Control-->
         <controls:Pivot Title="pasks" Name="pivotControl" LoadedPivotItem="pivotControl_LoadedPivotItem">
             <!--Pivot item one-->
             <controls:PivotItem Name="tasksPivotItem" Header="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.tasksTitle}">
-                <ListBox x:Name="FirstListBox" Margin="0,0,0,0" ItemsSource="{Binding Items}" SelectionChanged="FirstListBox_SelectionChanged">
+                <ListBox x:Name="FirstListBox" Margin="0,0,0,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                           <StackPanel Width="Auto" Height="Auto" Margin="12,0,0,6">
-                            <TextBlock LineStackingStrategy="BlockLineHeight" LineHeight="25" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" />
+                            <TextBlock LineStackingStrategy="BlockLineHeight" LineHeight="25" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" Tap="TextBlock_Tap_1" />
                             <TextBlock Text="{Binding LineTwo}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-5,12,0" />
                                 <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-5,12,0" />
                             </StackPanel>
@@ -62,17 +78,11 @@
 
         </controls:Pivot>
     </Grid>
-
-    <!--
-    <shell:SystemTray.ProgressIndicator>
-        <shell:ProgressIndicator IsIndeterminate="true" IsVisible="False" Text="Click me..." />
-    </shell:SystemTray.ProgressIndicator>
--->
     
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.settings.rest.png" Text="Sort"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar.new.rest.png" Text="Add new"/>
+            <shell:ApplicationBarIconButton x:Name="sortButton" IconUri="/Images/appbar.feature.settings.rest.png" Text="Sort by priority" Click="sortButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="addButton" IconUri="/Images/appbar.new.rest.png" Text="Add new" Click="ApplicationBarIconButton_Click_1" />
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.sync.rest.png" Text="Refresh" Click="ApplicationBarIconButton_Click" />
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Connect" Click="ApplicationBarMenuItem_Click" />
