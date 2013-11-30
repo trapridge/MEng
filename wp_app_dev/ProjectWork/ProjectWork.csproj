@@ -76,10 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>L10N.fi.resx</DependentUpon>
     </Compile>
+    <Compile Include="Model\ProjectData.cs" />
+    <Compile Include="Model\TaskData.cs" />
     <Compile Include="TaskPage.xaml.cs">
       <DependentUpon>TaskPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProducteevTasks.cs" />
+    <Compile Include="Model\ProducteevTasks.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -120,6 +122,7 @@
     <Content Include="Images\appbar.new.rest.png" />
     <Content Include="Images\appbar.sync.rest.png" />
     <Content Include="Images\MB_0010_tasks.png" />
+    <Content Include="Images\MB_0042_apps4.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="test.html" />
   </ItemGroup>

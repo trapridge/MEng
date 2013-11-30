@@ -70,11 +70,74 @@ namespace ProjectWork {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All projects.
+        /// </summary>
+        public static string allProjects {
+            get {
+                return ResourceManager.GetString("allProjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        public static string completed {
+            get {
+                return ResourceManager.GetString("completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Completed.
         /// </summary>
         public static string completedStatus {
             get {
                 return ResourceManager.GetString("completedStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection problem.
+        /// </summary>
+        public static string connectionProblem {
+            get {
+                return ResourceManager.GetString("connectionProblem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect to Producteev.
+        /// </summary>
+        public static string connecttoproducteev {
+            get {
+                return ResourceManager.GetString("connecttoproducteev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to delete.
+        /// </summary>
+        public static string delete {
+            get {
+                return ResourceManager.GetString("delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit/Add Task.
+        /// </summary>
+        public static string editaddTask {
+            get {
+                return ResourceManager.GetString("editaddTask", resourceCulture);
             }
         }
         
@@ -142,6 +205,33 @@ namespace ProjectWork {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort by priority.
+        /// </summary>
+        public static string sortbypriority {
+            get {
+                return ResourceManager.GetString("sortbypriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort by title.
+        /// </summary>
+        public static string sortbytitle {
+            get {
+                return ResourceManager.GetString("sortbytitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string status {
@@ -165,6 +255,15 @@ namespace ProjectWork {
         public static string threePriority {
             get {
                 return ResourceManager.GetString("threePriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string title {
+            get {
+                return ResourceManager.GetString("title", resourceCulture);
             }
         }
         

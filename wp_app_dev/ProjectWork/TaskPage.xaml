@@ -15,47 +15,30 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     toolkit:TiltEffect.IsTiltEnabled="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="pasks" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Edit task" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.editaddTask}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <!--
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid Height="170" HorizontalAlignment="Left" Margin="76,336,0,0" Name="grid1" VerticalAlignment="Top" Width="304">
-                <TextBlock Height="30" HorizontalAlignment="Left" Margin="6,0,0,0" Name="textBlock2" Text="TextBlock" VerticalAlignment="Top" Width="136" />
-                <TextBlock Height="30" HorizontalAlignment="Left" Margin="167,0,0,0" Name="textBlock3" Text="TextBlock" VerticalAlignment="Top" Width="137" />
-            </Grid>
-        </Grid>
-        -->
         <StackPanel Height="353" HorizontalAlignment="Left" Margin="12,0,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="456" Grid.Row="1">
-            <CheckBox Content="Completed" Height="71" Name="completedCheckBox" />
-            <TextBlock Height="26" Name="textBlock1" Text="Title" Width="432" />
+            <CheckBox Content="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.completed}" Height="71" Name="completedCheckBox" />
+            <TextBlock Height="26" Name="textBlock1" Text="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.title}" Width="432" />
             <TextBox Height="72" Name="titleTextBox" Text="" Width="460" />
-            <TextBlock Height="30" Name="textBlock2" Text="Priority" Width="434" />
+            <TextBlock Height="30" Name="textBlock2" Text="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.priority}" Width="434" />
             <Slider Height="103" Name="prioritySlider" Width="444" Maximum="6" SmallChange="1" />
         </StackPanel>
-        <Button Content="Save" Height="71" Name="saveButton" Width="160" HorizontalAlignment="Left" Margin="12,360,0,0" VerticalAlignment="Top" Grid.Row="1" Click="saveButton_Click" />
-        <Button Content="Delete" Height="72" HorizontalAlignment="Right" Margin="0,359,14,0" Name="deleteButton" VerticalAlignment="Top" Width="160" Grid.Row="1" Click="deleteButton_Click" />
+        <Button Content="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.save}" Height="71" Name="saveButton" Width="160" HorizontalAlignment="Left" Margin="12,360,0,0" VerticalAlignment="Top" Grid.Row="1" Click="saveButton_Click" />
+        <Button Content="{Binding Source={StaticResource LocalizedStrings}, Path=L10N.delete}" Height="72" HorizontalAlignment="Right" Margin="0,359,14,0" Name="deleteButton" VerticalAlignment="Top" Width="160" Grid.Row="1" Click="deleteButton_Click" />
         <Grid Height="120" Margin="12,344,12,143" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="114*" />
                 <ColumnDefinition Width="342*" />
             </Grid.ColumnDefinitions>
         </Grid>
-        <!--
-        <TextBlock Grid.RowSpan="2" Height="30" HorizontalAlignment="Left" Margin="743,143,0,0" Name="textBlock3" Text="TextBlock" VerticalAlignment="Top" />
-        <TextBlock Height="30" Name="textBlock4" Text="TextBlock" Margin="-450,163,474,414" Grid.Row="1" />
-        -->
     </Grid>
 
 </phone:PhoneApplicationPage>

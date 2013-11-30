@@ -20,19 +20,21 @@ namespace ProjectWork
 {
     public partial class Page1 : PhoneApplicationPage
     {
+        private string taskId;
+        private string projectId;
         ProgressIndicator progress = new ProgressIndicator
         {
             IsVisible = false,
             IsIndeterminate = true
         };
-        private string taskId;
-        private string projectId;
 
         public Page1()
         {
             InitializeComponent();
             SystemTray.SetProgressIndicator(this, progress);
         }
+
+        // event handlers ----------------------------------------------------------------------------->
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -94,6 +96,7 @@ namespace ProjectWork
             deleteTask();
         }
 
+        // -----------------------------------------------------------------------------> event handlers
 
         private void saveTask()
         {

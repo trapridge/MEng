@@ -33,5 +33,26 @@ namespace ProjectWork
                 yield return new KeyValuePair<string, string>(match.Groups["name"].Value, match.Groups["value"].Value);
             }
         }
+
+        public static bool strCmp(string a, string b)
+        {
+            if (a.Length < b.Length)
+                return false;
+            bool equal = false;
+            for (int i = 0; i < b.Length; i++)
+            {
+
+                if (a[i] == b[i])
+                    equal = true;
+                else
+                {
+                    equal = false;
+                    break;
+                }
+
+            }
+
+            return equal;
+        }
     }
 }
