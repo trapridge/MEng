@@ -38,7 +38,7 @@ Other things that should be improved if development was to continue:
  * Live tile could show information that actually added some value to the user
  * Error handling should be elaborated significantly
  * There should be a way to destroy login session to Producteev (WP7 API has serious limitations in modifying browser session data)
- * App could be refactored to have more offline features. Currently only authencation identifier is saved to persistent storage and all other information is short-lived and online connection is mandatory for all user intercations
+ * App could be refactored to have more offline features. Currently only authentication identifier is saved to persistent storage and all other information is short-lived and online connection is mandatory for all user intercations
 
 ## 3 Libraries etc.
 
