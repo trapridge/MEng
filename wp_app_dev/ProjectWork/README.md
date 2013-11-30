@@ -40,7 +40,7 @@ Other things that should be improved if development was to continue:
  * There should be a way to destroy login session to Producteev (WP7 API has serious limitations in modifying browser session data)
  * App could be refactored to have more offline features. Currently only authencation identifier is saved to persistent storage and all other information is short-lived and online connection is mandatory for all user intercations
 
-### 3 Libraries etc.
+## 3 Libraries etc.
 
  * Snippets from blogs and StackOverflow were used to find ways around the inconveniences of WP7 API
  * Tappable support was implemented with WP7 Toolkit's TiltEffect
