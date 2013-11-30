@@ -24,7 +24,7 @@ I implemented a subset of Producteev (task management cloud service) REST API in
 
 ### Differences in plan vs final implementation
 
-Number correspond with user story listing:
+Numbers below correspond with user story listing above:
 
  1. Label filtering was omitted from final version
  2. Adding a new task was not implemented
