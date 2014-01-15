@@ -5,8 +5,8 @@ All code for assigments, labsm and projects:
 
  * Android Application Development: `android_app_dev/`
  * iPhone Application Development: `iphone_app_dev/`
- * Windows Phone Application Development: `wp_app_dev/`
  * Mobile Web Technologies: `mobile_web_tech/`
+ * Windows Phone Application Development: `wp_app_dev/`
 
 Juuso Ansaharju/m0000892
 
