@@ -12,7 +12,7 @@
 
 @synthesize number, name;
 
--(Student *)initWithNumber:(NSNumber *)thisNumber andName:(NSString *)thisName {
+- (Student *)initWithNumber:(NSNumber *)thisNumber andName:(NSString *)thisName {
     self = [super init];
     if(self) {
         number = thisNumber;

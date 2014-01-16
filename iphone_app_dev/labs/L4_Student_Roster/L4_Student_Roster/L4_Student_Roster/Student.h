@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSNumber *number;
 @property (strong, nonatomic) NSString *name;
 
--(Student *)initWithNumber:(NSNumber *)number andName:(NSString *)name;
+- (Student *)initWithNumber:(NSNumber *)number andName:(NSString *)name;
 
 @end

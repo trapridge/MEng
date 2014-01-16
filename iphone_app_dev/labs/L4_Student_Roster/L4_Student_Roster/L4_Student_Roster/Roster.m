@@ -9,31 +9,29 @@
 #import "Roster.h"
 #import "Student.h"
 
-@interface Roster ()
-@end
-
 @implementation Roster
 
 @synthesize students;
 
--(void)addStudent:(Student *)student {
-    if(students == nil)
-        students = [NSMutableSet setWithObjects: nil];
-    
+- (Roster *)init {
+    self = [super init];
+    if(self) students = [NSMutableSet new];
+    return self;
+}
+
+- (void)addStudent:(Student *)student {
     [students addObject: student];
 }
 
--(void)deleteStudent:(NSNumber *)number {
+- (void)deleteStudent:(NSNumber *)number {
     Student *foundStudent;
-    
     for(Student *s in students) {
         if(s.number.intValue == number.intValue) {
             foundStudent = s;
+            break;
         }
     }
-    
-    [students removeObject: foundStudent];
+    if(foundStudent != nil) [students removeObject: foundStudent];
 }
 
 @end
-

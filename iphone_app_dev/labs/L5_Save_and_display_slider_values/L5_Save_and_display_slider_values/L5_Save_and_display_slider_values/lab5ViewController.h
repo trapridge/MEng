@@ -10,4 +10,9 @@
 
 @interface lab5ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *value;
+@property (strong, nonatomic) IBOutlet UILabel *min;
+@property (strong, nonatomic) IBOutlet UILabel *max;
+@property (strong, nonatomic) IBOutlet UILabel *avg;
+
 @end

@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) NSMutableSet *students;
 
-//+ (Roster *)init;
 -(void)addStudent:(Student *)student;
 -(void)deleteStudent:(NSNumber *)number;
 
