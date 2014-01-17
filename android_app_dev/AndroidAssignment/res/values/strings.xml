@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidAssignment</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="all_contacts">All contacts</string>
+    <string name="new_contact">Add new contact</string>
+    <string name="title_activity_add_contact">AddContactActivity</string>
+    <string name="first_name_label">Enter first name</string>
+    <string name="last_name_label">Enter last name</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="phone_number_label">Enter phone number</string>
+    <string name="phone_number_hint">Phone number</string>
+    <string name="email_hint">Email address</string>
+    <string name="email_label">Enter email address</string>
+    <string name="form_save">Save</string>
+    <string name="contact_saved">Contact saved</string>
+    <string name="title_activity_view_all_contacts">ViewAllContacts</string>
+    <string name="view_contacts">View all contacts</string>
+    <string name="download_button">Activate download service</string>
+    <string name="about_app">About the app</string>
+    <string name="content_type">image/png</string>
+    <string name="dialog_close">Close</string>
+    <string name="about_app_title">About the application</string>
+    <string name="about_app_body">"This application is designed for assignment project in Java mobile programming course in Metropolia. This application contains some functionality for contacts management. Users can add new contact, view list of contacts and remove contacts in list one by one. "</string>
+    <string name="ok">OK</string>
+    <string name="delete_first">Delete first contact</string>
+    <string name="all_items">All items</string>
+     <string name="app_title">Android Assignment Project</string>
+
+</resources>
