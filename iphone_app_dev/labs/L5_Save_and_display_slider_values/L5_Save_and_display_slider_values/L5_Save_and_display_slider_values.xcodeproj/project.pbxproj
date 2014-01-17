@@ -461,6 +461,7 @@
 				3975397D1888263800C87B00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3975397E1888263800C87B00 /* Build configuration list for PBXNativeTarget "L5_Save_and_display_slider_valuesTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +470,7 @@
 				397539801888263800C87B00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
