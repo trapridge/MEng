@@ -7,20 +7,30 @@
 //
 
 #import "lab6ViewController.h"
+#import "Lines.h"
 
 @interface lab6ViewController ()
+
+@property (strong, nonatomic) Lines *lines;
 
 @end
 
 @implementation lab6ViewController
 
 - (IBAction)edited:(id)sender forEvent:(UIEvent *)event {
+    // Add new line to model
+    NSString *s = [(UITextField*)sender text];
+    [_lines add:s];
+    
+    // Update text view
+    _textView.text = [_lines description];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _lines = [[Lines alloc] init];
 }
 
 - (void)didReceiveMemoryWarning

@@ -21,6 +21,7 @@
 		399851251889246F0020CD83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399851071889246F0020CD83 /* UIKit.framework */; };
 		3998512D1889246F0020CD83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3998512B1889246F0020CD83 /* InfoPlist.strings */; };
 		3998512F1889246F0020CD83 /* L6_Show_text_linesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3998512E1889246F0020CD83 /* L6_Show_text_linesTests.m */; };
+		3998514318892A980020CD83 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 3998514218892A980020CD83 /* Lines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3998512A1889246F0020CD83 /* L6_Show_text_linesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "L6_Show_text_linesTests-Info.plist"; sourceTree = "<group>"; };
 		3998512C1889246F0020CD83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3998512E1889246F0020CD83 /* L6_Show_text_linesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = L6_Show_text_linesTests.m; sourceTree = "<group>"; };
+		3998514118892A980020CD83 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
+		3998514218892A980020CD83 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				399851191889246F0020CD83 /* lab6ViewController.m */,
 				3998511B1889246F0020CD83 /* Images.xcassets */,
 				3998510A1889246F0020CD83 /* Supporting Files */,
+				3998514118892A980020CD83 /* Lines.h */,
+				3998514218892A980020CD83 /* Lines.m */,
 			);
 			path = L6_Show_text_lines;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3998511A1889246F0020CD83 /* lab6ViewController.m in Sources */,
+				3998514318892A980020CD83 /* Lines.m in Sources */,
 				399851101889246F0020CD83 /* main.m in Sources */,
 				399851141889246F0020CD83 /* lab6AppDelegate.m in Sources */,
 			);
@@ -461,6 +467,7 @@
 				399851341889246F0020CD83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		399851351889246F0020CD83 /* Build configuration list for PBXNativeTarget "L6_Show_text_linesTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +476,7 @@
 				399851371889246F0020CD83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
