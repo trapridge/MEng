@@ -29,8 +29,6 @@
     [_lines addObject:numberedLine];
 }
 
-// override description - ask about this (it's possible to override a class method as an instance
-// method..)
 - (NSString *)description {
     NSString *output = [[NSString alloc] init];
     for(NSString *line in _lines) {
