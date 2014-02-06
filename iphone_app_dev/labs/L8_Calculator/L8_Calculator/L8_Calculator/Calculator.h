@@ -12,8 +12,8 @@
 
 @property (strong, nonatomic) NSNumber *outcome;
 
-- (NSNumber *)sum:(NSNumber *)number;
-- (NSNumber *)multiply:(NSNumber *)number;
-- (NSNumber *)divide:(NSNumber *)number;
+//- (NSNumber *)sum:(NSNumber *)number;
+//- (NSNumber *)multiply:(NSNumber *)number;
+//- (NSNumber *)divide:(NSNumber *)number;
 
 @end
