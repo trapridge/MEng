@@ -17,7 +17,6 @@
 @property (strong, nonatomic) NSNumber *memory;
 
 - (NSNumber *)update:(NSNumber *)digit;
-//- (NSNumber *)negate;
 - (NSNumber *)operation:(NSString *)operation;
 - (NSNumber *)clear;
 

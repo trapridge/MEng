@@ -37,24 +37,17 @@
     return _current;
 }
 
-/*
-- (NSNumber *)negate {
-    _current = [NSNumber numberWithFloat:[_current floatValue] * -1];
-    
-    [self log];
-    return _current;
-}
-*/
-
 - (NSNumber *)operation:(NSString *)operation {
     // =
     if([operation isEqualToString:@"="]) {
         [self calculate];
         _activeOperation = nil;
     }
-    // + - * /
-    else if (_activeOperation != nil) {
-        [self calculate];
+    else {
+        // + - * /
+        if(_activeOperation != nil) {
+            [self calculate];
+        }
         _activeOperation = operation;
     }
     
@@ -97,6 +90,7 @@
 - (void)clearMemory {
     _memory = [NSNumber numberWithInt:0];
 }
+
 - (NSNumber *)memorize {
     _current = [NSNumber numberWithFloat:[_memory floatValue]];
     
