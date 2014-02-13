@@ -22,4 +22,10 @@ replacementString:(NSString *)string {
     
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //[self.view EndEditing:YES];
+    return YES;
+}
+
 @end

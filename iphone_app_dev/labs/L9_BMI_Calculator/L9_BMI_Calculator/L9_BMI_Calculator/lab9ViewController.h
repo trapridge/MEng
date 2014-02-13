@@ -7,10 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TextOnlyAcceptor.h"
+#import "BMICalculator.h"
+#import "BMIChangeDelegate.h"
 
-@interface lab9ViewController : UIViewController
+@interface lab9ViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,BMIChangeDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *picker;
+
+@property (strong, nonatomic) NSMutableArray *masses;
+@property (strong, nonatomic) NSMutableArray *heights;
+
+@property (strong, nonatomic) BMICalculator *bmiCalculator;
+
+@property (nonatomic) int currentMass;
+@property (nonatomic) int currentHeight;
 
 @end

@@ -26,14 +26,24 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-zA-OIn">
-                                <rect key="frame" x="0.0" y="153" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="83" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="yE4-zz-0pk"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="8Zq-Za-gYD"/>
+                                </connections>
                             </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IhJ-E4-bib">
+                                <rect key="frame" x="40" y="308" width="240" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="image" destination="IhJ-E4-bib" id="lkt-Qp-Nxa"/>
                         <outlet property="nameField" destination="u9I-Pl-o7F" id="Llm-lP-7Zh"/>
+                        <outlet property="picker" destination="9Cv-zA-OIn" id="OYM-2u-sIr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

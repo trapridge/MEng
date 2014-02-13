@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390284B018ACF1B800BA6875 /* BMICalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 390284AF18ACF1B800BA6875 /* BMICalculator.m */; };
+		390284B418AD07BA00BA6875 /* burger.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 390284B218AD07BA00BA6875 /* burger.jpeg */; };
+		390284B518AD07BA00BA6875 /* carrot.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 390284B318AD07BA00BA6875 /* carrot.jpeg */; };
 		393E144518A3B4B700CC7A18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E144418A3B4B700CC7A18 /* Foundation.framework */; };
 		393E144718A3B4B700CC7A18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E144618A3B4B700CC7A18 /* CoreGraphics.framework */; };
 		393E144918A3B4B700CC7A18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E144818A3B4B700CC7A18 /* UIKit.framework */; };
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390284AE18ACF1B800BA6875 /* BMICalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMICalculator.h; sourceTree = "<group>"; };
+		390284AF18ACF1B800BA6875 /* BMICalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMICalculator.m; sourceTree = "<group>"; };
+		390284B118ACFFFD00BA6875 /* BMIChangeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMIChangeDelegate.h; sourceTree = "<group>"; };
+		390284B218AD07BA00BA6875 /* burger.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burger.jpeg; sourceTree = "<group>"; };
+		390284B318AD07BA00BA6875 /* carrot.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carrot.jpeg; sourceTree = "<group>"; };
 		393E144118A3B4B700CC7A18 /* L9_BMI_Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = L9_BMI_Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393E144418A3B4B700CC7A18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		393E144618A3B4B700CC7A18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +123,8 @@
 		393E144A18A3B4B700CC7A18 /* L9_BMI_Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				390284B218AD07BA00BA6875 /* burger.jpeg */,
+				390284B318AD07BA00BA6875 /* carrot.jpeg */,
 				393E145318A3B4B700CC7A18 /* lab9AppDelegate.h */,
 				393E145418A3B4B700CC7A18 /* lab9AppDelegate.m */,
 				393E145618A3B4B700CC7A18 /* Main.storyboard */,
@@ -124,6 +134,9 @@
 				393E144B18A3B4B700CC7A18 /* Supporting Files */,
 				39B717EA18A3BAA700896E56 /* TextOnlyAcceptor.h */,
 				39B717EB18A3BAA700896E56 /* TextOnlyAcceptor.m */,
+				390284AE18ACF1B800BA6875 /* BMICalculator.h */,
+				390284AF18ACF1B800BA6875 /* BMICalculator.m */,
+				390284B118ACFFFD00BA6875 /* BMIChangeDelegate.h */,
 			);
 			path = L9_BMI_Calculator;
 			sourceTree = "<group>";
@@ -236,6 +249,8 @@
 			files = (
 				393E145D18A3B4B700CC7A18 /* Images.xcassets in Resources */,
 				393E144F18A3B4B700CC7A18 /* InfoPlist.strings in Resources */,
+				390284B418AD07BA00BA6875 /* burger.jpeg in Resources */,
+				390284B518AD07BA00BA6875 /* carrot.jpeg in Resources */,
 				393E145818A3B4B700CC7A18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +274,7 @@
 				393E145B18A3B4B700CC7A18 /* lab9ViewController.m in Sources */,
 				39B717EC18A3BAA700896E56 /* TextOnlyAcceptor.m in Sources */,
 				393E145118A3B4B700CC7A18 /* main.m in Sources */,
+				390284B018ACF1B800BA6875 /* BMICalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
