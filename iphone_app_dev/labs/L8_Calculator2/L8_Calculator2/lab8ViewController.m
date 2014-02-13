@@ -59,13 +59,30 @@
     }
     else if([[[(UIButton*)sender titleLabel] text] isEqualToString: @"MR"]) {
         [_current setText: [NSString stringWithFormat:@"%@", [_calculator memorize]]];
+        NSLog(@"memorized");
     }
+}
+
+- (void)save {
+    [NSKeyedArchiver archiveRootObject:_calculator toFile:[self getPersistencePath]];
+}
+
+- (void)resume {
+    _calculator = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getPersistencePath]];
+}
+
+-(NSString *)getPersistencePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"texts.plist"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _calculator = [[Calculator alloc] init];
+    if(_calculator == nil) {
+        _calculator = [[Calculator alloc] init];
+    }   
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

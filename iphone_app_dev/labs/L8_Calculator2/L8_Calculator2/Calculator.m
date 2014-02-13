@@ -27,7 +27,7 @@
         _current = digit;
     }
     else {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         _current = [f numberFromString:[NSString stringWithFormat:@"%@%d",
                                         [_current stringValue], [digit intValue]]];
@@ -79,6 +79,7 @@
     }
 }
 
+/*** Memory implementation ***/
 - (void)addToMemory {
     _memory = [NSNumber numberWithFloat:[_memory floatValue] + [_current floatValue]];
 }
@@ -98,6 +99,24 @@
     return _current;
 }
 
+/*** NSCoding implementation ***/
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    NSLog(@"Serializing memory: %f", [_memory floatValue]);
+    [aCoder encodeObject:_memory forKey:@"memory"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [self init];
+    if (!self) {
+        return nil;
+    }
+
+    _memory = [aDecoder decodeObjectForKey:@"memory"];
+    NSLog(@"Deserializing memory: %f", [_memory floatValue]);
+    return self;
+}
+
+/*** Helpers ***/
 - (void)log {
     NSLog(@"current %f, previous %f, op %@",
           [_current floatValue], [_previous floatValue], _activeOperation);

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Memory.h"
 
-@interface Calculator : NSObject <Memory>
+@interface Calculator : NSObject <Memory, NSCoding>
 
 @property (strong, nonatomic) NSNumber *current;
 @property (strong, nonatomic) NSNumber *previous;

@@ -7,11 +7,18 @@
 //
 
 #import "lab8AppDelegate.h"
+#import "lab8ViewController.h"
 
 @implementation lab8AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    lab8ViewController *mainController = (lab8ViewController *)  self.window.rootViewController;
+    [mainController resume];
+    [self.window addSubview:mainController.view];
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -20,6 +27,9 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    lab8ViewController *mainController = (lab8ViewController *)  self.window.rootViewController;
+    [mainController save];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

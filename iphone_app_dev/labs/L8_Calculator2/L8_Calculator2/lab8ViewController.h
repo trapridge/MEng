@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *current;
 
+-(void)save;
+-(void)resume;
+
 @end
