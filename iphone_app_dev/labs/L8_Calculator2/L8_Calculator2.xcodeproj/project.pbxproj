@@ -50,7 +50,7 @@
 		39F237E918915B82005052B6 /* lab8AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab8AppDelegate.m; sourceTree = "<group>"; };
 		39F237EC18915B82005052B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39F237EE18915B82005052B6 /* lab8ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lab8ViewController.h; sourceTree = "<group>"; };
-		39F237EF18915B82005052B6 /* lab8ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab8ViewController.m; sourceTree = "<group>"; };
+		39F237EF18915B82005052B6 /* lab8ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab8ViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		39F237F118915B82005052B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		39F237F718915B82005052B6 /* L8_Calculator2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = L8_Calculator2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F237F818915B82005052B6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
