@@ -25,6 +25,7 @@
 		393E146E18A3B4B800CC7A18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 393E146C18A3B4B800CC7A18 /* InfoPlist.strings */; };
 		393E147018A3B4B800CC7A18 /* L9_BMI_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E146F18A3B4B800CC7A18 /* L9_BMI_CalculatorTests.m */; };
 		39B717EC18A3BAA700896E56 /* TextOnlyAcceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B717EB18A3BAA700896E56 /* TextOnlyAcceptor.m */; };
+		39EFA24C18C4D048000CBCE6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EFA24B18C4D048000CBCE6 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		393E146F18A3B4B800CC7A18 /* L9_BMI_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = L9_BMI_CalculatorTests.m; sourceTree = "<group>"; };
 		39B717EA18A3BAA700896E56 /* TextOnlyAcceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextOnlyAcceptor.h; sourceTree = "<group>"; };
 		39B717EB18A3BAA700896E56 /* TextOnlyAcceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextOnlyAcceptor.m; sourceTree = "<group>"; };
+		39EFA24A18C4D048000CBCE6 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		39EFA24B18C4D048000CBCE6 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 				390284AE18ACF1B800BA6875 /* BMICalculator.h */,
 				390284AF18ACF1B800BA6875 /* BMICalculator.m */,
 				390284B118ACFFFD00BA6875 /* BMIChangeDelegate.h */,
+				39EFA24A18C4D048000CBCE6 /* Person.h */,
+				39EFA24B18C4D048000CBCE6 /* Person.m */,
 			);
 			path = L9_BMI_Calculator;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39EFA24C18C4D048000CBCE6 /* Person.m in Sources */,
 				393E145518A3B4B700CC7A18 /* lab9AppDelegate.m in Sources */,
 				393E145B18A3B4B700CC7A18 /* lab9ViewController.m in Sources */,
 				39B717EC18A3BAA700896E56 /* TextOnlyAcceptor.m in Sources */,

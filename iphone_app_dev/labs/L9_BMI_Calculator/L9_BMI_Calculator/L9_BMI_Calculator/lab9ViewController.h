@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BMICalculator.h"
 #import "BMIChangeDelegate.h"
+#import "Person.h"
 
 @interface lab9ViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,BMIChangeDelegate>
 
@@ -25,5 +26,10 @@
 
 @property (nonatomic) int currentMass;
 @property (nonatomic) int currentHeight;
+
+@property (strong, nonatomic) Person *person;
+
+-(void)save;
+-(void)resume;
 
 @end

@@ -29,10 +29,12 @@ TextOnlyAcceptor *toa;
         [self.image setImage:[UIImage imageNamed:@"carrot.jpeg"]];
     }
     
+    _person.bmi = [NSNumber numberWithFloat:newBmi];
 }
 
 - (IBAction)nameChanged:(id)sender forEvent:(UIEvent *)event {
     NSLog(@"nameChanged");
+    _person.name = [_nameField text];
 }
 
 // UIPickerViewDataSource
@@ -44,7 +46,7 @@ TextOnlyAcceptor *toa;
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     //set number of rows
-    if(component== 0)
+    if(component == 0)
     {
         return [self.masses count];
     }
@@ -56,7 +58,7 @@ TextOnlyAcceptor *toa;
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
-    if(component== 0)
+    if(component == 0)
     {
         return [self.masses objectAtIndex:row];
     }
@@ -117,6 +119,21 @@ TextOnlyAcceptor *toa;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)save {
+    [NSKeyedArchiver archiveRootObject:_person toFile:[self getPersistencePath]];
+}
 
+- (void)resume {
+    _person = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getPersistencePath]];
+    
+    [_nameField setText: _person.name];
+    [self bmiChanged:[_person.bmi floatValue]];
+}
+
+-(NSString *)getPersistencePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"texts.plist"];
+}
 
 @end
