@@ -24,6 +24,7 @@ replacementString:(NSString *)string {
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [textField.superview endEditing:YES];
     //[self.view EndEditing:YES];
     return YES;
 }

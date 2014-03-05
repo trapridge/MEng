@@ -84,8 +84,14 @@ TextOnlyAcceptor *toa;
 {
     [super viewDidLoad];
     toa = [TextOnlyAcceptor new];
+    
+    if(_person == nil) {
+        _person = [Person new];
+    }
+    
     [_nameField setDelegate: toa];
-
+    [_nameField setText: _person.name];
+    
     self.masses = [self populateMasses];
     self.heights = [self populateHeights];
     
@@ -120,13 +126,15 @@ TextOnlyAcceptor *toa;
 }
 
 - (void)save {
+    NSLog(@"saving");
     [NSKeyedArchiver archiveRootObject:_person toFile:[self getPersistencePath]];
 }
 
 - (void)resume {
+    NSLog(@"resuming");
     _person = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getPersistencePath]];
     
-    [_nameField setText: _person.name];
+    
     [self bmiChanged:[_person.bmi floatValue]];
 }
 

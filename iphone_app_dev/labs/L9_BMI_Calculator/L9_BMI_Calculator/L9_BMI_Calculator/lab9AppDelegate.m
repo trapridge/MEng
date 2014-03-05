@@ -13,8 +13,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"ok");
+    
     lab9ViewController *mainController = (lab9ViewController *)  self.window.rootViewController;
     [mainController resume];
+    
+    [self.window addSubview:mainController.view];
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
