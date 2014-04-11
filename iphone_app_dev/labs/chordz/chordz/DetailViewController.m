@@ -2,8 +2,8 @@
 //  DetailViewController.m
 //  chordz
 //
-//  Created by jansaharju on 13/03/14.
-//
+//  Created by jansaharju on 09/04/14.
+//  Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -31,7 +31,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.detailDescriptionLabel.text = [self.detailItem name];
     }
 }
 

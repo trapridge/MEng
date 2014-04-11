@@ -7,161 +7,157 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39FDCBB418D23BB500640CE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB318D23BB500640CE8 /* Foundation.framework */; };
-		39FDCBB618D23BB500640CE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB518D23BB500640CE8 /* CoreGraphics.framework */; };
-		39FDCBB818D23BB500640CE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB718D23BB500640CE8 /* UIKit.framework */; };
-		39FDCBBA18D23BB500640CE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB918D23BB500640CE8 /* CoreData.framework */; };
-		39FDCBC018D23BB500640CE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FDCBBE18D23BB500640CE8 /* InfoPlist.strings */; };
-		39FDCBC218D23BB500640CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBC118D23BB500640CE8 /* main.m */; };
-		39FDCBC618D23BB500640CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBC518D23BB500640CE8 /* AppDelegate.m */; };
-		39FDCBC918D23BB500640CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FDCBC718D23BB500640CE8 /* Main.storyboard */; };
-		39FDCBCC18D23BB500640CE8 /* chordz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBCA18D23BB500640CE8 /* chordz.xcdatamodeld */; };
-		39FDCBCF18D23BB600640CE8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBCE18D23BB600640CE8 /* MasterViewController.m */; };
-		39FDCBD218D23BB600640CE8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBD118D23BB600640CE8 /* DetailViewController.m */; };
-		39FDCBD418D23BB600640CE8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FDCBD318D23BB600640CE8 /* Images.xcassets */; };
-		39FDCBDB18D23BB600640CE8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBDA18D23BB600640CE8 /* XCTest.framework */; };
-		39FDCBDC18D23BB600640CE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB318D23BB500640CE8 /* Foundation.framework */; };
-		39FDCBDD18D23BB600640CE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB718D23BB500640CE8 /* UIKit.framework */; };
-		39FDCBDE18D23BB600640CE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FDCBB918D23BB500640CE8 /* CoreData.framework */; };
-		39FDCBE618D23BB600640CE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FDCBE418D23BB600640CE8 /* InfoPlist.strings */; };
-		39FDCBE818D23BB600640CE8 /* chordzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDCBE718D23BB600640CE8 /* chordzTests.m */; };
+		399A5C3B18F5C7DD0073C402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C3A18F5C7DD0073C402 /* Foundation.framework */; };
+		399A5C3D18F5C7DD0073C402 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C3C18F5C7DD0073C402 /* CoreGraphics.framework */; };
+		399A5C3F18F5C7DD0073C402 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C3E18F5C7DD0073C402 /* UIKit.framework */; };
+		399A5C4518F5C7DD0073C402 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 399A5C4318F5C7DD0073C402 /* InfoPlist.strings */; };
+		399A5C4718F5C7DD0073C402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C4618F5C7DD0073C402 /* main.m */; };
+		399A5C4B18F5C7DD0073C402 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C4A18F5C7DD0073C402 /* AppDelegate.m */; };
+		399A5C4E18F5C7DD0073C402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399A5C4C18F5C7DD0073C402 /* Main.storyboard */; };
+		399A5C5118F5C7DD0073C402 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C5018F5C7DD0073C402 /* MasterViewController.m */; };
+		399A5C5418F5C7DD0073C402 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C5318F5C7DD0073C402 /* DetailViewController.m */; };
+		399A5C5618F5C7DD0073C402 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 399A5C5518F5C7DD0073C402 /* Images.xcassets */; };
+		399A5C5D18F5C7DD0073C402 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C5C18F5C7DD0073C402 /* XCTest.framework */; };
+		399A5C5E18F5C7DD0073C402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C3A18F5C7DD0073C402 /* Foundation.framework */; };
+		399A5C5F18F5C7DD0073C402 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A5C3E18F5C7DD0073C402 /* UIKit.framework */; };
+		399A5C6718F5C7DD0073C402 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 399A5C6518F5C7DD0073C402 /* InfoPlist.strings */; };
+		399A5C6918F5C7DD0073C402 /* chordzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C6818F5C7DD0073C402 /* chordzTests.m */; };
+		399A5C7418F5C82C0073C402 /* Chord.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C7318F5C82C0073C402 /* Chord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		39FDCBDF18D23BB600640CE8 /* PBXContainerItemProxy */ = {
+		399A5C6018F5C7DD0073C402 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 39FDCBA818D23BB500640CE8 /* Project object */;
+			containerPortal = 399A5C2F18F5C7DD0073C402 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 39FDCBAF18D23BB500640CE8;
+			remoteGlobalIDString = 399A5C3618F5C7DD0073C402;
 			remoteInfo = chordz;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39FDCBB018D23BB500640CE8 /* chordz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chordz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		39FDCBB318D23BB500640CE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		39FDCBB518D23BB500640CE8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		39FDCBB718D23BB500640CE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		39FDCBB918D23BB500640CE8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		39FDCBBD18D23BB500640CE8 /* chordz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chordz-Info.plist"; sourceTree = "<group>"; };
-		39FDCBBF18D23BB500640CE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		39FDCBC118D23BB500640CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		39FDCBC318D23BB500640CE8 /* chordz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chordz-Prefix.pch"; sourceTree = "<group>"; };
-		39FDCBC418D23BB500640CE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		39FDCBC518D23BB500640CE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		39FDCBC818D23BB500640CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		39FDCBCB18D23BB500640CE8 /* chordz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chordz.xcdatamodel; sourceTree = "<group>"; };
-		39FDCBCD18D23BB500640CE8 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		39FDCBCE18D23BB600640CE8 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		39FDCBD018D23BB600640CE8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		39FDCBD118D23BB600640CE8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		39FDCBD318D23BB600640CE8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		39FDCBD918D23BB600640CE8 /* chordzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chordzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39FDCBDA18D23BB600640CE8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		39FDCBE318D23BB600640CE8 /* chordzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chordzTests-Info.plist"; sourceTree = "<group>"; };
-		39FDCBE518D23BB600640CE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		39FDCBE718D23BB600640CE8 /* chordzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chordzTests.m; sourceTree = "<group>"; };
+		399A5C3718F5C7DD0073C402 /* chordz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chordz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		399A5C3A18F5C7DD0073C402 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		399A5C3C18F5C7DD0073C402 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		399A5C3E18F5C7DD0073C402 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		399A5C4218F5C7DD0073C402 /* chordz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chordz-Info.plist"; sourceTree = "<group>"; };
+		399A5C4418F5C7DD0073C402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		399A5C4618F5C7DD0073C402 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		399A5C4818F5C7DD0073C402 /* chordz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chordz-Prefix.pch"; sourceTree = "<group>"; };
+		399A5C4918F5C7DD0073C402 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		399A5C4A18F5C7DD0073C402 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		399A5C4D18F5C7DD0073C402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		399A5C4F18F5C7DD0073C402 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		399A5C5018F5C7DD0073C402 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		399A5C5218F5C7DD0073C402 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		399A5C5318F5C7DD0073C402 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		399A5C5518F5C7DD0073C402 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		399A5C5B18F5C7DD0073C402 /* chordzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chordzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		399A5C5C18F5C7DD0073C402 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		399A5C6418F5C7DD0073C402 /* chordzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chordzTests-Info.plist"; sourceTree = "<group>"; };
+		399A5C6618F5C7DD0073C402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		399A5C6818F5C7DD0073C402 /* chordzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chordzTests.m; sourceTree = "<group>"; };
+		399A5C7218F5C82C0073C402 /* Chord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chord.h; sourceTree = "<group>"; };
+		399A5C7318F5C82C0073C402 /* Chord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		39FDCBAD18D23BB500640CE8 /* Frameworks */ = {
+		399A5C3418F5C7DD0073C402 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBB618D23BB500640CE8 /* CoreGraphics.framework in Frameworks */,
-				39FDCBBA18D23BB500640CE8 /* CoreData.framework in Frameworks */,
-				39FDCBB818D23BB500640CE8 /* UIKit.framework in Frameworks */,
-				39FDCBB418D23BB500640CE8 /* Foundation.framework in Frameworks */,
+				399A5C3D18F5C7DD0073C402 /* CoreGraphics.framework in Frameworks */,
+				399A5C3F18F5C7DD0073C402 /* UIKit.framework in Frameworks */,
+				399A5C3B18F5C7DD0073C402 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39FDCBD618D23BB600640CE8 /* Frameworks */ = {
+		399A5C5818F5C7DD0073C402 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBDB18D23BB600640CE8 /* XCTest.framework in Frameworks */,
-				39FDCBDE18D23BB600640CE8 /* CoreData.framework in Frameworks */,
-				39FDCBDD18D23BB600640CE8 /* UIKit.framework in Frameworks */,
-				39FDCBDC18D23BB600640CE8 /* Foundation.framework in Frameworks */,
+				399A5C5D18F5C7DD0073C402 /* XCTest.framework in Frameworks */,
+				399A5C5F18F5C7DD0073C402 /* UIKit.framework in Frameworks */,
+				399A5C5E18F5C7DD0073C402 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39FDCBA718D23BB500640CE8 = {
+		399A5C2E18F5C7DD0073C402 = {
 			isa = PBXGroup;
 			children = (
-				39FDCBBB18D23BB500640CE8 /* chordz */,
-				39FDCBE118D23BB600640CE8 /* chordzTests */,
-				39FDCBB218D23BB500640CE8 /* Frameworks */,
-				39FDCBB118D23BB500640CE8 /* Products */,
+				399A5C4018F5C7DD0073C402 /* chordz */,
+				399A5C6218F5C7DD0073C402 /* chordzTests */,
+				399A5C3918F5C7DD0073C402 /* Frameworks */,
+				399A5C3818F5C7DD0073C402 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		39FDCBB118D23BB500640CE8 /* Products */ = {
+		399A5C3818F5C7DD0073C402 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBB018D23BB500640CE8 /* chordz.app */,
-				39FDCBD918D23BB600640CE8 /* chordzTests.xctest */,
+				399A5C3718F5C7DD0073C402 /* chordz.app */,
+				399A5C5B18F5C7DD0073C402 /* chordzTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		39FDCBB218D23BB500640CE8 /* Frameworks */ = {
+		399A5C3918F5C7DD0073C402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBB318D23BB500640CE8 /* Foundation.framework */,
-				39FDCBB518D23BB500640CE8 /* CoreGraphics.framework */,
-				39FDCBB718D23BB500640CE8 /* UIKit.framework */,
-				39FDCBB918D23BB500640CE8 /* CoreData.framework */,
-				39FDCBDA18D23BB600640CE8 /* XCTest.framework */,
+				399A5C3A18F5C7DD0073C402 /* Foundation.framework */,
+				399A5C3C18F5C7DD0073C402 /* CoreGraphics.framework */,
+				399A5C3E18F5C7DD0073C402 /* UIKit.framework */,
+				399A5C5C18F5C7DD0073C402 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		39FDCBBB18D23BB500640CE8 /* chordz */ = {
+		399A5C4018F5C7DD0073C402 /* chordz */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBC418D23BB500640CE8 /* AppDelegate.h */,
-				39FDCBC518D23BB500640CE8 /* AppDelegate.m */,
-				39FDCBC718D23BB500640CE8 /* Main.storyboard */,
-				39FDCBCD18D23BB500640CE8 /* MasterViewController.h */,
-				39FDCBCE18D23BB600640CE8 /* MasterViewController.m */,
-				39FDCBD018D23BB600640CE8 /* DetailViewController.h */,
-				39FDCBD118D23BB600640CE8 /* DetailViewController.m */,
-				39FDCBD318D23BB600640CE8 /* Images.xcassets */,
-				39FDCBCA18D23BB500640CE8 /* chordz.xcdatamodeld */,
-				39FDCBBC18D23BB500640CE8 /* Supporting Files */,
+				399A5C4918F5C7DD0073C402 /* AppDelegate.h */,
+				399A5C4A18F5C7DD0073C402 /* AppDelegate.m */,
+				399A5C4C18F5C7DD0073C402 /* Main.storyboard */,
+				399A5C4F18F5C7DD0073C402 /* MasterViewController.h */,
+				399A5C5018F5C7DD0073C402 /* MasterViewController.m */,
+				399A5C5218F5C7DD0073C402 /* DetailViewController.h */,
+				399A5C5318F5C7DD0073C402 /* DetailViewController.m */,
+				399A5C5518F5C7DD0073C402 /* Images.xcassets */,
+				399A5C4118F5C7DD0073C402 /* Supporting Files */,
+				399A5C7218F5C82C0073C402 /* Chord.h */,
+				399A5C7318F5C82C0073C402 /* Chord.m */,
 			);
 			path = chordz;
 			sourceTree = "<group>";
 		};
-		39FDCBBC18D23BB500640CE8 /* Supporting Files */ = {
+		399A5C4118F5C7DD0073C402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBBD18D23BB500640CE8 /* chordz-Info.plist */,
-				39FDCBBE18D23BB500640CE8 /* InfoPlist.strings */,
-				39FDCBC118D23BB500640CE8 /* main.m */,
-				39FDCBC318D23BB500640CE8 /* chordz-Prefix.pch */,
+				399A5C4218F5C7DD0073C402 /* chordz-Info.plist */,
+				399A5C4318F5C7DD0073C402 /* InfoPlist.strings */,
+				399A5C4618F5C7DD0073C402 /* main.m */,
+				399A5C4818F5C7DD0073C402 /* chordz-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		39FDCBE118D23BB600640CE8 /* chordzTests */ = {
+		399A5C6218F5C7DD0073C402 /* chordzTests */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBE718D23BB600640CE8 /* chordzTests.m */,
-				39FDCBE218D23BB600640CE8 /* Supporting Files */,
+				399A5C6818F5C7DD0073C402 /* chordzTests.m */,
+				399A5C6318F5C7DD0073C402 /* Supporting Files */,
 			);
 			path = chordzTests;
 			sourceTree = "<group>";
 		};
-		39FDCBE218D23BB600640CE8 /* Supporting Files */ = {
+		399A5C6318F5C7DD0073C402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39FDCBE318D23BB600640CE8 /* chordzTests-Info.plist */,
-				39FDCBE418D23BB600640CE8 /* InfoPlist.strings */,
+				399A5C6418F5C7DD0073C402 /* chordzTests-Info.plist */,
+				399A5C6518F5C7DD0073C402 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,13 +165,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39FDCBAF18D23BB500640CE8 /* chordz */ = {
+		399A5C3618F5C7DD0073C402 /* chordz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39FDCBEB18D23BB600640CE8 /* Build configuration list for PBXNativeTarget "chordz" */;
+			buildConfigurationList = 399A5C6C18F5C7DD0073C402 /* Build configuration list for PBXNativeTarget "chordz" */;
 			buildPhases = (
-				39FDCBAC18D23BB500640CE8 /* Sources */,
-				39FDCBAD18D23BB500640CE8 /* Frameworks */,
-				39FDCBAE18D23BB500640CE8 /* Resources */,
+				399A5C3318F5C7DD0073C402 /* Sources */,
+				399A5C3418F5C7DD0073C402 /* Frameworks */,
+				399A5C3518F5C7DD0073C402 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -183,41 +179,42 @@
 			);
 			name = chordz;
 			productName = chordz;
-			productReference = 39FDCBB018D23BB500640CE8 /* chordz.app */;
+			productReference = 399A5C3718F5C7DD0073C402 /* chordz.app */;
 			productType = "com.apple.product-type.application";
 		};
-		39FDCBD818D23BB600640CE8 /* chordzTests */ = {
+		399A5C5A18F5C7DD0073C402 /* chordzTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39FDCBEE18D23BB600640CE8 /* Build configuration list for PBXNativeTarget "chordzTests" */;
+			buildConfigurationList = 399A5C6F18F5C7DD0073C402 /* Build configuration list for PBXNativeTarget "chordzTests" */;
 			buildPhases = (
-				39FDCBD518D23BB600640CE8 /* Sources */,
-				39FDCBD618D23BB600640CE8 /* Frameworks */,
-				39FDCBD718D23BB600640CE8 /* Resources */,
+				399A5C5718F5C7DD0073C402 /* Sources */,
+				399A5C5818F5C7DD0073C402 /* Frameworks */,
+				399A5C5918F5C7DD0073C402 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				39FDCBE018D23BB600640CE8 /* PBXTargetDependency */,
+				399A5C6118F5C7DD0073C402 /* PBXTargetDependency */,
 			);
 			name = chordzTests;
 			productName = chordzTests;
-			productReference = 39FDCBD918D23BB600640CE8 /* chordzTests.xctest */;
+			productReference = 399A5C5B18F5C7DD0073C402 /* chordzTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		39FDCBA818D23BB500640CE8 /* Project object */ = {
+		399A5C2F18F5C7DD0073C402 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
-					39FDCBD818D23BB600640CE8 = {
-						TestTargetID = 39FDCBAF18D23BB500640CE8;
+					399A5C5A18F5C7DD0073C402 = {
+						TestTargetID = 399A5C3618F5C7DD0073C402;
 					};
 				};
 			};
-			buildConfigurationList = 39FDCBAB18D23BB500640CE8 /* Build configuration list for PBXProject "chordz" */;
+			buildConfigurationList = 399A5C3218F5C7DD0073C402 /* Build configuration list for PBXProject "chordz" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -225,90 +222,90 @@
 				en,
 				Base,
 			);
-			mainGroup = 39FDCBA718D23BB500640CE8;
-			productRefGroup = 39FDCBB118D23BB500640CE8 /* Products */;
+			mainGroup = 399A5C2E18F5C7DD0073C402;
+			productRefGroup = 399A5C3818F5C7DD0073C402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39FDCBAF18D23BB500640CE8 /* chordz */,
-				39FDCBD818D23BB600640CE8 /* chordzTests */,
+				399A5C3618F5C7DD0073C402 /* chordz */,
+				399A5C5A18F5C7DD0073C402 /* chordzTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		39FDCBAE18D23BB500640CE8 /* Resources */ = {
+		399A5C3518F5C7DD0073C402 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBD418D23BB600640CE8 /* Images.xcassets in Resources */,
-				39FDCBC018D23BB500640CE8 /* InfoPlist.strings in Resources */,
-				39FDCBC918D23BB500640CE8 /* Main.storyboard in Resources */,
+				399A5C5618F5C7DD0073C402 /* Images.xcassets in Resources */,
+				399A5C4518F5C7DD0073C402 /* InfoPlist.strings in Resources */,
+				399A5C4E18F5C7DD0073C402 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39FDCBD718D23BB600640CE8 /* Resources */ = {
+		399A5C5918F5C7DD0073C402 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBE618D23BB600640CE8 /* InfoPlist.strings in Resources */,
+				399A5C6718F5C7DD0073C402 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		39FDCBAC18D23BB500640CE8 /* Sources */ = {
+		399A5C3318F5C7DD0073C402 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBD218D23BB600640CE8 /* DetailViewController.m in Sources */,
-				39FDCBCF18D23BB600640CE8 /* MasterViewController.m in Sources */,
-				39FDCBC618D23BB500640CE8 /* AppDelegate.m in Sources */,
-				39FDCBC218D23BB500640CE8 /* main.m in Sources */,
-				39FDCBCC18D23BB500640CE8 /* chordz.xcdatamodeld in Sources */,
+				399A5C7418F5C82C0073C402 /* Chord.m in Sources */,
+				399A5C4B18F5C7DD0073C402 /* AppDelegate.m in Sources */,
+				399A5C5118F5C7DD0073C402 /* MasterViewController.m in Sources */,
+				399A5C4718F5C7DD0073C402 /* main.m in Sources */,
+				399A5C5418F5C7DD0073C402 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39FDCBD518D23BB600640CE8 /* Sources */ = {
+		399A5C5718F5C7DD0073C402 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FDCBE818D23BB600640CE8 /* chordzTests.m in Sources */,
+				399A5C6918F5C7DD0073C402 /* chordzTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		39FDCBE018D23BB600640CE8 /* PBXTargetDependency */ = {
+		399A5C6118F5C7DD0073C402 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 39FDCBAF18D23BB500640CE8 /* chordz */;
-			targetProxy = 39FDCBDF18D23BB600640CE8 /* PBXContainerItemProxy */;
+			target = 399A5C3618F5C7DD0073C402 /* chordz */;
+			targetProxy = 399A5C6018F5C7DD0073C402 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		39FDCBBE18D23BB500640CE8 /* InfoPlist.strings */ = {
+		399A5C4318F5C7DD0073C402 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39FDCBBF18D23BB500640CE8 /* en */,
+				399A5C4418F5C7DD0073C402 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		39FDCBC718D23BB500640CE8 /* Main.storyboard */ = {
+		399A5C4C18F5C7DD0073C402 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39FDCBC818D23BB500640CE8 /* Base */,
+				399A5C4D18F5C7DD0073C402 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		39FDCBE418D23BB600640CE8 /* InfoPlist.strings */ = {
+		399A5C6518F5C7DD0073C402 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39FDCBE518D23BB600640CE8 /* en */,
+				399A5C6618F5C7DD0073C402 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -316,7 +313,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		39FDCBE918D23BB600640CE8 /* Debug */ = {
+		399A5C6A18F5C7DD0073C402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -354,7 +351,7 @@
 			};
 			name = Debug;
 		};
-		39FDCBEA18D23BB600640CE8 /* Release */ = {
+		399A5C6B18F5C7DD0073C402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +383,7 @@
 			};
 			name = Release;
 		};
-		39FDCBEC18D23BB600640CE8 /* Debug */ = {
+		399A5C6D18F5C7DD0073C402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -399,7 +396,7 @@
 			};
 			name = Debug;
 		};
-		39FDCBED18D23BB600640CE8 /* Release */ = {
+		399A5C6E18F5C7DD0073C402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -412,7 +409,7 @@
 			};
 			name = Release;
 		};
-		39FDCBEF18D23BB600640CE8 /* Debug */ = {
+		399A5C7018F5C7DD0073C402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/chordz.app/chordz";
@@ -434,7 +431,7 @@
 			};
 			name = Debug;
 		};
-		39FDCBF018D23BB600640CE8 /* Release */ = {
+		399A5C7118F5C7DD0073C402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/chordz.app/chordz";
@@ -455,45 +452,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39FDCBAB18D23BB500640CE8 /* Build configuration list for PBXProject "chordz" */ = {
+		399A5C3218F5C7DD0073C402 /* Build configuration list for PBXProject "chordz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39FDCBE918D23BB600640CE8 /* Debug */,
-				39FDCBEA18D23BB600640CE8 /* Release */,
+				399A5C6A18F5C7DD0073C402 /* Debug */,
+				399A5C6B18F5C7DD0073C402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39FDCBEB18D23BB600640CE8 /* Build configuration list for PBXNativeTarget "chordz" */ = {
+		399A5C6C18F5C7DD0073C402 /* Build configuration list for PBXNativeTarget "chordz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39FDCBEC18D23BB600640CE8 /* Debug */,
-				39FDCBED18D23BB600640CE8 /* Release */,
+				399A5C6D18F5C7DD0073C402 /* Debug */,
+				399A5C6E18F5C7DD0073C402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		39FDCBEE18D23BB600640CE8 /* Build configuration list for PBXNativeTarget "chordzTests" */ = {
+		399A5C6F18F5C7DD0073C402 /* Build configuration list for PBXNativeTarget "chordzTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39FDCBEF18D23BB600640CE8 /* Debug */,
-				39FDCBF018D23BB600640CE8 /* Release */,
+				399A5C7018F5C7DD0073C402 /* Debug */,
+				399A5C7118F5C7DD0073C402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		39FDCBCA18D23BB500640CE8 /* chordz.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				39FDCBCB18D23BB500640CE8 /* chordz.xcdatamodel */,
-			);
-			currentVersion = 39FDCBCB18D23BB500640CE8 /* chordz.xcdatamodel */;
-			path = chordz.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 39FDCBA818D23BB500640CE8 /* Project object */;
+	rootObject = 399A5C2F18F5C7DD0073C402 /* Project object */;
 }
