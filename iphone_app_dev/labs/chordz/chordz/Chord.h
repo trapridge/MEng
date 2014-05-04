@@ -11,6 +11,6 @@
 @interface Chord : NSObject
 
 @property (strong, nonatomic) NSString *name;
-//@property bool draft;
+@property (strong, nonatomic) NSString *description;
 
 @end

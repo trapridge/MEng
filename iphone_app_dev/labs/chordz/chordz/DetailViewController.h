@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) id detailItem;
 
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

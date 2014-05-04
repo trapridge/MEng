@@ -66,6 +66,7 @@
 
 #pragma mark - Table View
 
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [_sections count];
@@ -75,7 +76,8 @@
 {
     return _sections;
 }
-
+*/
+ 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _objects.count;
@@ -90,16 +92,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    /*
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    */
     Chord *c = _objects[indexPath.row];
     cell.textLabel.text = [c name];
-    
-    
-    
-    
     
     return cell;
 }
@@ -120,15 +114,12 @@
     }
 }
 
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [_sections objectAtIndex:section];
-    /*
-    if(section == 0) return @"Section 1";
-    else if(section == 1) return @"Section 2";
-    else return @"";
-     */
 }
+*/
 
 /*
 // Override to support rearranging the table view.

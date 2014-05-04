@@ -32,6 +32,7 @@
 
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem name];
+        self.nameField.text = [self.detailItem name];
     }
 }
 
