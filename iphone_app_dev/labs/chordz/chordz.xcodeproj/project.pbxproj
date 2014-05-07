@@ -59,6 +59,7 @@
 		399A5C6818F5C7DD0073C402 /* chordzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chordzTests.m; sourceTree = "<group>"; };
 		399A5C7218F5C82C0073C402 /* Chord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chord.h; sourceTree = "<group>"; };
 		399A5C7318F5C82C0073C402 /* Chord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chord.m; sourceTree = "<group>"; };
+		39DF211B191AC0B90092AF83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		399A5C3918F5C7DD0073C402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39DF211B191AC0B90092AF83 /* CoreData.framework */,
 				399A5C3A18F5C7DD0073C402 /* Foundation.framework */,
 				399A5C3C18F5C7DD0073C402 /* CoreGraphics.framework */,
 				399A5C3E18F5C7DD0073C402 /* UIKit.framework */,
@@ -468,6 +470,7 @@
 				399A5C6E18F5C7DD0073C402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		399A5C6F18F5C7DD0073C402 /* Build configuration list for PBXNativeTarget "chordzTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +479,7 @@
 				399A5C7118F5C7DD0073C402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

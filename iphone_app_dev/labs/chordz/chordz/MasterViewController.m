@@ -13,7 +13,6 @@
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
-    NSArray *_sections;
     NSMutableData *_responseData;
     NSURLConnection *_getConnection;
     NSURLConnection *_deleteConnection;
@@ -41,10 +40,6 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    _sections = [NSArray arrayWithObjects:@"#", @"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h",
-                 @"i", @"j", @"k", @"l", @"m", @"n", @"o", @"p", @"q", @"r", @"s", @"t", @"u",
-                 @"v", @"w", @"x", @"y", @"z", nil];
-    
     _owner = @"531edf8f41efcb00028055fe";
     
 }
@@ -61,14 +56,6 @@
         _objects = [[NSMutableArray alloc] init];
     }
     
-    //Initialize the dataArray
-//    dataArray = [[NSMutableArray alloc] init];
-    
-    //First section data
-//    NSArray *firstItemsArray = [[NSArray alloc] initWithObjects:@"Item 1", @"Item 2", @"Item 3", nil];
-//    NSDictionary *firstItemsArrayDict = [NSDictionary dictionaryWithObject:firstItemsArray forKey:@"data"];
-//    [dataArray addObject:firstItemsArrayDict];
-    
     [_objects insertObject:[Chord new] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
@@ -77,17 +64,6 @@
 
 #pragma mark - Table View
 
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [_sections count];
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return _sections;
-}
-*/
  
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -105,10 +81,6 @@
 
     Chord *c = _objects[indexPath.row];
     cell.textLabel.text = [c name];
-    
-    //cell.textLabel.text = _objects[indexPath.row][@"name"];
-    
-    //NSLog(@"hmm");
     
     return cell;
 }
@@ -128,29 +100,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
-/*
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [_sections objectAtIndex:section];
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

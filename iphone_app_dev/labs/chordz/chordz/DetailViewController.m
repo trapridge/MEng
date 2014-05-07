@@ -132,9 +132,6 @@
             // Make a circular shape
             circle.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 2.0*radius, 2.0*radius)
                                                      cornerRadius:radius].CGPath;
-            // Center the shape in self.view
-            //circle.position = CGPointMake(CGRectGetMidX(self.view.frame)-radius,
-            //                              CGRectGetMidY(self.view.frame)-radius);
             
             circle.position = CGPointMake(basex - radius + i * hspace, basey - radius + pos * vspace - vspace / 2);
             
@@ -160,16 +157,11 @@
     if(recognizer.state == UIGestureRecognizerStateRecognized)
     {
         CGPoint point = [recognizer locationInView:recognizer.view];
-        // again, point.x and point.y have the coordinates
-        //NSLog(@"x: %f, y: %f", point.x, point.y);
         
-        // check if positions should change
         const int basex = 70;
         const int basey = 220;
-        //const int height = 250;
         const int hspace = 36;
         const int vspace = 55;
-        //const int width = 36 * 5;
         
         // string 6
         if(point.x > basex - hspace/2 && point.x < basex + hspace/2 &&
