@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Chord.h"
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController<NSURLConnectionDelegate, ChordDelegate>
 
 @end

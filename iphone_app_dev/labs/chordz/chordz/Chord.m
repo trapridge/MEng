@@ -19,7 +19,13 @@
 - (Chord *)init {
     self = [super init];
     _name = @"draft";
-//    _draft = true;
+    _positions = [NSMutableArray new];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
+    [_positions addObject: [NSNumber numberWithInt:-1]];
     return self;
 }
 
