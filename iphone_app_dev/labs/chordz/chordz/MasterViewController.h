@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Chord.h"
+#import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController<NSURLConnectionDelegate, ChordDelegate>
+@interface MasterViewController : UITableViewController<NSURLConnectionDelegate, ChordDelegate, NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

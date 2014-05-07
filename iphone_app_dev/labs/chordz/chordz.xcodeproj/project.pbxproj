@@ -23,6 +23,7 @@
 		399A5C6718F5C7DD0073C402 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 399A5C6518F5C7DD0073C402 /* InfoPlist.strings */; };
 		399A5C6918F5C7DD0073C402 /* chordzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C6818F5C7DD0073C402 /* chordzTests.m */; };
 		399A5C7418F5C82C0073C402 /* Chord.m in Sources */ = {isa = PBXBuildFile; fileRef = 399A5C7318F5C82C0073C402 /* Chord.m */; };
+		39DF216C191AC6680092AF83 /* chordz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39DF216A191AC6680092AF83 /* chordz.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		399A5C7218F5C82C0073C402 /* Chord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chord.h; sourceTree = "<group>"; };
 		399A5C7318F5C82C0073C402 /* Chord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chord.m; sourceTree = "<group>"; };
 		39DF211B191AC0B90092AF83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		39DF216B191AC6680092AF83 /* chordz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chordz.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				399A5C4118F5C7DD0073C402 /* Supporting Files */,
 				399A5C7218F5C82C0073C402 /* Chord.h */,
 				399A5C7318F5C82C0073C402 /* Chord.m */,
+				39DF216A191AC6680092AF83 /* chordz.xcdatamodeld */,
 			);
 			path = chordz;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				399A5C5118F5C7DD0073C402 /* MasterViewController.m in Sources */,
 				399A5C4718F5C7DD0073C402 /* main.m in Sources */,
 				399A5C5418F5C7DD0073C402 /* DetailViewController.m in Sources */,
+				39DF216C191AC6680092AF83 /* chordz.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39DF216A191AC6680092AF83 /* chordz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39DF216B191AC6680092AF83 /* chordz.xcdatamodel */,
+			);
+			currentVersion = 39DF216B191AC6680092AF83 /* chordz.xcdatamodel */;
+			path = chordz.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 399A5C2F18F5C7DD0073C402 /* Project object */;
 }
