@@ -66,6 +66,7 @@
                                             initWithTarget:self action:@selector(handleTapFrom:)];
     [self.view addGestureRecognizer:recognizer];
     
+    [_nameField setDelegate:self];
     
 }
 
@@ -174,64 +175,64 @@
         if(point.x > basex - hspace/2 && point.x < basex + hspace/2 &&
            point.y > basey && point.y < basey + vspace) {
             NSLog(@"string 6 fret 1 tapped!");
-            [self togglePosition:6 forFret:1];
+            [self togglePosition:0 forFret:1];
         }
         else if(point.x > basex - hspace/2 && point.x < basex + hspace/2 &&
                 point.y > basey + vspace && point.y < basey + vspace*2) {
             NSLog(@"string 6 fret 2 tapped!");
-            [self togglePosition:6 forFret:2];
+            [self togglePosition:0 forFret:2];
         }
         else if(point.x > basex - hspace/2 && point.x < basex + hspace/2 &&
                 point.y > basey + vspace*2 && point.y < basey + vspace*3) {
             NSLog(@"string 6 fret 3 tapped!");
-            [self togglePosition:6 forFret:3];
+            [self togglePosition:0 forFret:3];
         }
         else if(point.x > basex - hspace/2 && point.x < basex + hspace/2 &&
                 point.y > basey + vspace*3 && point.y < basey + vspace*4) {
             NSLog(@"string 6 fret 4 tapped!");
-            [self togglePosition:6 forFret:4];
+            [self togglePosition:0 forFret:4];
         }
         // string 5
         else if(point.x > basex - hspace/2 + hspace && point.x < basex + hspace/2 + hspace &&
            point.y > basey && point.y < basey + vspace) {
             NSLog(@"string 5 fret 1 tapped!");
-            [self togglePosition:5 forFret:1];
+            [self togglePosition:1 forFret:1];
         }
         else if(point.x > basex - hspace/2 + hspace && point.x < basex + hspace/2 + hspace &&
                 point.y > basey + vspace && point.y < basey + vspace*2) {
             NSLog(@"string 5 fret 2 tapped!");
-            [self togglePosition:5 forFret:2];
+            [self togglePosition:1 forFret:2];
         }
         else if(point.x > basex - hspace/2 + hspace && point.x < basex + hspace/2 + hspace &&
                 point.y > basey + vspace*2 && point.y < basey + vspace*3) {
             NSLog(@"string 5 fret 3 tapped!");
-            [self togglePosition:5 forFret:3];
+            [self togglePosition:1 forFret:3];
         }
         else if(point.x > basex - hspace/2 + hspace && point.x < basex + hspace/2 + hspace &&
                 point.y > basey + vspace*3 && point.y < basey + vspace*4) {
             NSLog(@"string 5 fret 4 tapped!");
-            [self togglePosition:5 forFret:4];
+            [self togglePosition:1 forFret:4];
         }
         // string 4
         else if(point.x > basex - hspace/2 + hspace*2 && point.x < basex + hspace/2 + hspace*2 &&
                 point.y > basey && point.y < basey + vspace) {
             NSLog(@"string 4 fret 1 tapped!");
-            [self togglePosition:4 forFret:1];
+            [self togglePosition:2 forFret:1];
         }
         else if(point.x > basex - hspace/2 + hspace*2 && point.x < basex + hspace/2 + hspace*2 &&
                 point.y > basey + vspace && point.y < basey + vspace*2) {
             NSLog(@"string 4 fret 2 tapped!");
-            [self togglePosition:4 forFret:2];
+            [self togglePosition:2 forFret:2];
         }
-        else if(point.x > basex - hspace/2 + hspace*2 && point.x < basex + hspace/2 + hspace*3 &&
+        else if(point.x > basex - hspace/2 + hspace*2 && point.x < basex + hspace/2 + hspace*2 &&
                 point.y > basey + vspace*2 && point.y < basey + vspace*3) {
             NSLog(@"string 4 fret 3 tapped!");
-            [self togglePosition:4 forFret:3];
+            [self togglePosition:2 forFret:3];
         }
         else if(point.x > basex - hspace/2 + hspace*2 && point.x < basex + hspace/2 + hspace*2 &&
                 point.y > basey + vspace*3 && point.y < basey + vspace*4) {
             NSLog(@"string 4 fret 4 tapped!");
-            [self togglePosition:4 forFret:4];
+            [self togglePosition:2 forFret:4];
         }
         // string 3
         else if(point.x > basex - hspace/2 + hspace*3 && point.x < basex + hspace/2 + hspace*3 &&
@@ -258,43 +259,43 @@
         else if(point.x > basex - hspace/2 + hspace*4 && point.x < basex + hspace/2 + hspace*4 &&
                 point.y > basey && point.y < basey + vspace) {
             NSLog(@"string 2 fret 1 tapped!");
-            [self togglePosition:2 forFret:1];
+            [self togglePosition:4 forFret:1];
         }
         else if(point.x > basex - hspace/2 + hspace*4 && point.x < basex + hspace/2 + hspace*4 &&
                 point.y > basey + vspace && point.y < basey + vspace*2) {
             NSLog(@"string 2 fret 2 tapped!");
-            [self togglePosition:2 forFret:2];
+            [self togglePosition:4 forFret:2];
         }
         else if(point.x > basex - hspace/2 + hspace*4 && point.x < basex + hspace/2 + hspace*4 &&
                 point.y > basey + vspace*2 && point.y < basey + vspace*3) {
             NSLog(@"string 2 fret 3 tapped!");
-            [self togglePosition:2 forFret:3];
+            [self togglePosition:4 forFret:3];
         }
         else if(point.x > basex - hspace/2 + hspace*4 && point.x < basex + hspace/2 + hspace*4 &&
                 point.y > basey + vspace*3 && point.y < basey + vspace*4) {
             NSLog(@"string 2 fret 4 tapped!");
-            [self togglePosition:2 forFret:4];
+            [self togglePosition:4 forFret:4];
         }
         // string 1
         else if(point.x > basex - hspace/2 + hspace*5 && point.x < basex + hspace/2 + hspace*5 &&
                 point.y > basey && point.y < basey + vspace) {
             NSLog(@"string 1 fret 1 tapped!");
-            [self togglePosition:1 forFret:1];
+            [self togglePosition:5 forFret:1];
         }
         else if(point.x > basex - hspace/2 + hspace*5 && point.x < basex + hspace/2 + hspace*5 &&
                 point.y > basey + vspace && point.y < basey + vspace*2) {
             NSLog(@"string 1 fret 2 tapped!");
-            [self togglePosition:1 forFret:2];
+            [self togglePosition:5 forFret:2];
         }
         else if(point.x > basex - hspace/2 + hspace*5 && point.x < basex + hspace/2 + hspace*5 &&
                 point.y > basey + vspace*2 && point.y < basey + vspace*3) {
             NSLog(@"string 1 fret 3 tapped!");
-            [self togglePosition:1 forFret:3];
+            [self togglePosition:5 forFret:3];
         }
         else if(point.x > basex - hspace/2 + hspace*5 && point.x < basex + hspace/2 + hspace*5 &&
                 point.y > basey + vspace*3 && point.y < basey + vspace*4) {
             NSLog(@"string 1 fret 4 tapped!");
-            [self togglePosition:1 forFret:4];
+            [self togglePosition:5 forFret:4];
         }
         
         // if changed then redraw
@@ -305,7 +306,7 @@
                 [layer removeFromSuperlayer];
             }
             layerCount--;
-        }   
+        }
         
         layerCount = 0;
         [self drawPositions];
@@ -313,17 +314,24 @@
 }
 
 - (void) togglePosition: (int)string forFret: (int)fret {
-    int currentState = [[[_detailItem positions] objectAtIndex: string-1] intValue];
+    int currentState = [[[_detailItem positions] objectAtIndex: string] intValue];
     
     if(currentState == fret) {
-        [[_detailItem positions] replaceObjectAtIndex: string-1 withObject: [NSNumber numberWithInt:0]];
+        [[_detailItem positions] replaceObjectAtIndex: string withObject: [NSNumber numberWithInt:0]];
     }
     else {
-        [[_detailItem positions] replaceObjectAtIndex: string-1 withObject: [NSNumber numberWithInt:fret]];
+        [[_detailItem positions] replaceObjectAtIndex: string withObject: [NSNumber numberWithInt:fret]];
     }
         
     // update master list via delegate
     [[_detailItem delegate] chordChanged: _detailItem];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField.superview endEditing:YES];
+    //[self.view EndEditing:YES];
+    return YES;
 }
 
 @end
