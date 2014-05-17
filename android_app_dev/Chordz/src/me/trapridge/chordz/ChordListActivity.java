@@ -1,8 +1,15 @@
 package me.trapridge.chordz;
 
+import java.util.List;
+import java.util.Random;
+
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 
@@ -23,7 +30,20 @@ import android.view.MenuInflater;
  */
 public class ChordListActivity extends FragmentActivity implements
 		ChordListFragment.Callbacks {
-
+	
+	private final String LOG_TAG = getClass().getSimpleName();
+	private DatabaseHelper databaseHelper = null;
+	
+	/**
+	 * You'll need this in your class to get the helper from the manager once per class.
+	 */
+	private DatabaseHelper getHelper() {
+		if (databaseHelper == null) {
+			databaseHelper = OpenHelperManager.getHelper(this, DatabaseHelper.class);
+		}
+		return databaseHelper;
+	}
+	
 	/**
 	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet
 	 * device.
@@ -33,6 +53,9 @@ public class ChordListActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		doSampleDatabaseStuff("onCreate");
+		
 		setContentView(R.layout.activity_chord_list);
 
 		if (findViewById(R.id.chord_detail_container) != null) {
@@ -83,4 +106,72 @@ public class ChordListActivity extends FragmentActivity implements
 	    inflater.inflate(R.menu.chord_list_menu, menu);
 	    return true;
 	  } 
+	
+	/**
+	 * Do our sample database stuff.
+	 */
+	private void doSampleDatabaseStuff(String action) {
+		// get our dao
+		RuntimeExceptionDao<SimpleData, Integer> simpleDao = getHelper().getSimpleDataDao();
+		// query for all of the data objects in the database
+		List<SimpleData> list = simpleDao.queryForAll();
+		// our string builder for building the content-view
+		StringBuilder sb = new StringBuilder();
+		sb.append("got ").append(list.size()).append(" entries in ").append(action).append("\n");
+
+		// if we already have items in the database
+		int simpleC = 0;
+		for (SimpleData simple : list) {
+			sb.append("------------------------------------------\n");
+			sb.append("[").append(simpleC).append("] = ").append(simple).append("\n");
+			simpleC++;
+		}
+		sb.append("------------------------------------------\n");
+		for (SimpleData simple : list) {
+			simpleDao.delete(simple);
+			sb.append("deleted id ").append(simple.id).append("\n");
+			Log.i(LOG_TAG, "deleting simple(" + simple.id + ")");
+			simpleC++;
+		}
+
+		int createNum;
+		do {
+			createNum = new Random().nextInt(3) + 1;
+		} while (createNum == list.size());
+		for (int i = 0; i < createNum; i++) {
+			// create a new simple object
+			long millis = System.currentTimeMillis();
+			SimpleData simple = new SimpleData(millis);
+			// store it in the database
+			simpleDao.create(simple);
+			Log.i(LOG_TAG, "created simple(" + millis + ")");
+			// output it
+			sb.append("------------------------------------------\n");
+			sb.append("created new entry #").append(i + 1).append(":\n");
+			sb.append(simple).append("\n");
+			try {
+				Thread.sleep(5);
+			} catch (InterruptedException e) {
+				// ignore
+			}
+		}
+
+		Log.i(LOG_TAG, "Done with page at " + System.currentTimeMillis());
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		
+		/*
+		 * You'll need this in your class to release the helper when done.
+		 */
+		if (databaseHelper != null) {
+			OpenHelperManager.releaseHelper();
+			databaseHelper = null;
+		}
+	}
+	
+	
 }

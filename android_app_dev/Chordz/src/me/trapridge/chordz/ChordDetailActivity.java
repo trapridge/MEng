@@ -19,6 +19,9 @@ public class ChordDetailActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		System.out.println("on handset!");
+		
 		setContentView(R.layout.activity_chord_detail);
 
 		// Show the Up button in the action bar.
