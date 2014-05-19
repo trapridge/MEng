@@ -1,4 +1,4 @@
-package me.trapridge.chordz.utils;
+package me.trapridge.chordz;
 
 import java.io.IOException;
 import java.sql.SQLException;

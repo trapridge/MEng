@@ -30,6 +30,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ChordListActivity" />
         </activity>
+        <receiver android:name="me.trapridge.chordz.NetworkStatusReceiver">
+   			<intent-filter>
+      			<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+   			</intent-filter>
+		</receiver>
     </application>
-
+    
 </manifest>

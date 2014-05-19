@@ -1,5 +1,7 @@
 package me.trapridge.chordz;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -37,6 +39,8 @@ public class ChordListFragment extends ListFragment {
 	 */
 	private int mActivatedPosition = ListView.INVALID_POSITION;
 
+	private List<ChordData> data;
+	
 	/**
 	 * A callback interface that all activities containing this fragment must
 	 * implement. This mechanism allows activities to be notified of item
@@ -71,9 +75,16 @@ public class ChordListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+		//setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+		//		android.R.layout.simple_list_item_activated_1,
+		//		android.R.id.text1, DummyContent.ITEMS));
+		
+		//ListFragment f = (ListFragment)getFragmentManager().findFragmentById(R.id.chord_list);
+		
+		data = ((ChordListActivity)getActivity()).getHelper().getSimpleDataDao().queryForAll();
+		setListAdapter(new ArrayAdapter<ChordData>(getActivity(),
 				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, DummyContent.ITEMS));
+				android.R.id.text1, data));
 	}
 
 	@Override
@@ -116,7 +127,8 @@ public class ChordListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		//mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(Integer.toString(data.get(position).id));
 	}
 
 	@Override

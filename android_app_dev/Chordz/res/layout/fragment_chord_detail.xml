@@ -1,9 +1,53 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- 
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/chord_detail"
     style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="16dp"
+    android:layout_marginTop="16dp"
     android:textIsSelectable="true"
-    tools:context=".ChordDetailFragment" />
+    tools:context=".ChordDetailFragment"
+    android:inputType="text" />
+ -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical" >
+  
+  <EditText 
+    android:id="@+id/chord_detail"
+    style="?android:attr/textAppearanceLarge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_marginTop="16dp"
+    android:textIsSelectable="true"
+    tools:context=".ChordDetailFragment"
+    android:inputType="text" />
+    
+  <!-- 
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ok"
+    android:background="#60c" />
+   -->
+  
+  <me.trapridge.chordz.PositionsSurface
+      android:id="@+id/surface"
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      android:background="#60c"
+      />
+   
+  <Button
+      android:id="@+id/deleteButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Delete" />
+  
+</LinearLayout>

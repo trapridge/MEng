@@ -24,8 +24,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// the DAO object we use to access the SimpleData table
-	private Dao<SimpleData, Integer> simpleDao = null;
-	private RuntimeExceptionDao<SimpleData, Integer> simpleRuntimeDao = null;
+	private Dao<ChordData, Integer> simpleDao = null;
+	private RuntimeExceptionDao<ChordData, Integer> simpleRuntimeDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
@@ -39,19 +39,19 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
 		try {
 			Log.i(DatabaseHelper.class.getName(), "onCreate");
-			TableUtils.createTable(connectionSource, SimpleData.class);
+			TableUtils.createTable(connectionSource, ChordData.class);
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
 			throw new RuntimeException(e);
 		}
 
 		// here we try inserting data in the on-create as a test
-		RuntimeExceptionDao<SimpleData, Integer> dao = getSimpleDataDao();
+		RuntimeExceptionDao<ChordData, Integer> dao = getSimpleDataDao();
 		long millis = System.currentTimeMillis();
 		// create some entries in the onCreate
-		SimpleData simple = new SimpleData(millis);
+		ChordData simple = new ChordData("initial", -1, -1, -1, -1, -1, -1);
 		dao.create(simple);
-		simple = new SimpleData(millis + 1);
+		simple = new ChordData("initial2", -1, -1, -1, -1, -1, -1);
 		dao.create(simple);
 		Log.i(DatabaseHelper.class.getName(), "created new entries in onCreate: " + millis);
 	}
@@ -64,7 +64,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 		try {
 			Log.i(DatabaseHelper.class.getName(), "onUpgrade");
-			TableUtils.dropTable(connectionSource, SimpleData.class, true);
+			TableUtils.dropTable(connectionSource, ChordData.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
@@ -77,9 +77,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the Database Access Object (DAO) for our SimpleData class. It will create it or just give the cached
 	 * value.
 	 */
-	public Dao<SimpleData, Integer> getDao() throws SQLException {
+	public Dao<ChordData, Integer> getDao() throws SQLException {
 		if (simpleDao == null) {
-			simpleDao = getDao(SimpleData.class);
+			simpleDao = getDao(ChordData.class);
 		}
 		return simpleDao;
 	}
@@ -88,9 +88,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the RuntimeExceptionDao (Database Access Object) version of a Dao for our SimpleData class. It will
 	 * create it or just give the cached value. RuntimeExceptionDao only through RuntimeExceptions.
 	 */
-	public RuntimeExceptionDao<SimpleData, Integer> getSimpleDataDao() {
+	public RuntimeExceptionDao<ChordData, Integer> getSimpleDataDao() {
 		if (simpleRuntimeDao == null) {
-			simpleRuntimeDao = getRuntimeExceptionDao(SimpleData.class);
+			simpleRuntimeDao = getRuntimeExceptionDao(ChordData.class);
 		}
 		return simpleRuntimeDao;
 	}
